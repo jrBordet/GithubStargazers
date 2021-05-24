@@ -1,0 +1,5 @@
+strings:
+    inputs: GithubStargazers/Resources/en.lproj/Localizable.strings
+    outputs:
+      templateName: structured-swift4
+      output: GithubStargazers/Resources/Localizable.swift

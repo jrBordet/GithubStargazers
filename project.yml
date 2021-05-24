@@ -1,0 +1,57 @@
+name: GithubStargazers
+
+options:
+    bundleIdPrefix: com.bordet
+    createIntermediateGroups: true
+    indentWidth: 4
+    tabWidth: 4
+    deploymentTarget:
+        iOS: "10.0"
+configs:
+  Debug: debug
+  Mock: debug
+  Release: release
+settings:
+  configs:
+    debug:
+      CUSTOM_BUILD_SETTING: debug
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+    mock:
+      CUSTOM_BUILD_SETTING: mock
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: MOCK
+    release:
+      CUSTOM_BUILD_SETTING: release
+      
+targets:
+  
+  GithubStargazers:
+    type: application
+    platform: iOS
+    deploymentTarget: 10.0
+    sources:
+        - path: GithubStargazers
+    scheme:
+        gatherCoverageData: true
+        environmentVariables:
+          BASE_URL: "https://www.mise.gov.it/images/exportCSV"
+        testTargets:
+          - name: GithubStargazersTests
+            parallelizable: false
+            randomExecutionOrder: true
+
+  GithubStargazersTests:
+    type: bundle.unit-test
+    platform: iOS
+    gatherCoverageData: true
+    deploymentTarget: 10.0
+    sources:
+        - path: GithubStargazersTests
+    dependencies:
+        - target: GithubStargazers
+
+  GithubStargazersMock:
+    type: application
+    platform: iOS
+    deploymentTarget: 10.0
+    sources:
+        - path: GithubStargazers
