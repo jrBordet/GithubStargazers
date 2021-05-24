@@ -13,13 +13,14 @@ import RxSwift
 import RxCocoa
 import RxComposableArchitectureTests
 
-class StargazersTestsTests: XCTestCase {
+class StargazersViewTests: XCTestCase {
 	let env = StargazerViewEnvironment(
-		stargazersEnv: StargazersEnvironment(fetch: { v in
-			.just([])
-		}), other: {
-			.just(true)
-		})
+		stargazersEnv: StargazersEnvironment(
+			fetch: { _, _, _ in
+				.just([])
+			}
+		)
+	)
 	
 	override func setUp() {
 	}

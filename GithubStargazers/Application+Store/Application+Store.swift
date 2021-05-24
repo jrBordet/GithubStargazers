@@ -9,17 +9,17 @@ import Foundation
 import RxComposableArchitecture
 import SwiftPrettyPrint
 
-//var applicationStore: Store<AppState, AppAction> =
-//  Store(
-//    initialValue: initialAppState,
-//    reducer: with(
-//      appReducer,
-//      compose(
-//		customLogging,
-//        activityFeed
-//    )),
-//    environment: live
-//)
+var applicationStore: Store<AppState, AppAction> =
+  Store(
+    initialValue: initialAppState,
+    reducer: with(
+      appReducer,
+      compose(
+		customLogging,
+        activityFeed
+    )),
+	environment: AppEnvironment.live
+)
 
 
 public func customLogging<Value, Action, Environment>(
