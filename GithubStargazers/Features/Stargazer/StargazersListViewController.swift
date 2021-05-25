@@ -136,10 +136,6 @@ class StargazersListViewController: UIViewController {
 			.asDriver(onErrorJustReturn: [])
 			.drive(tableView.rx.items(dataSource: dataSource))
 			.disposed(by: disposeBag)
-
-		// MARK: - fetch
-		
-		//store.send(.stargazer(.fetch))
 	}
 	
 	// MARK: - Data Source Configuration
@@ -175,30 +171,3 @@ extension StargazersListViewController {
 		}
 	}
 }
-
-
-//extension ArrivalDepartureSectionItem {
-//	static var mock: Observable<[ArrivalDepartureSectionItem]> =
-//		.just([
-//			ArrivalDepartureSectionItem(name: "ryagas"),
-//			ArrivalDepartureSectionItem(name: "hydrogen2005")
-//		])
-//}
-
-
-
-// 		Mock without Composable Store
-	  
-//		ArrivalDepartureSectionItem
-//			.mock
-//			.map { (items: [ArrivalDepartureSectionItem]) -> [ArrivalsDeparturesListSectionModel] in
-//				[
-//					ArrivalsDeparturesListSectionModel(
-//						model: "",
-//						items: items
-//					)
-//				]
-//			}
-//			.asDriver(onErrorJustReturn: [])
-//			.drive(tableView.rx.items(dataSource: dataSource))
-//			.disposed(by: disposeBag)
