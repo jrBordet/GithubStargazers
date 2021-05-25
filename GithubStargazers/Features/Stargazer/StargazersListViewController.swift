@@ -31,30 +31,6 @@ extension StargazerSectionItem: IdentifiableType {
 extension StargazerSectionItem: Equatable { }
 
 extension Reactive where Base: Store<StargazerViewState, StargazerViewAction> {
-//	var selectStation: Binder<Station?> {
-//		Binder(self.base) { store, value in
-//			store.send(.arrivalDepartures(.select(value)))
-//		}
-//	}
-//
-//	var selectTrain: Binder<CurrentTrain?> {
-//		Binder(self.base) { store, value in
-//			store.send(.arrivalDepartures(.selectTrain(value)))
-//		}
-//	}
-//
-//	var departures: Binder<Station> {
-//		Binder(self.base) { store, value in
-//			store.send(.arrivalDepartures(.departures(value.id)))
-//		}
-//	}
-//
-//	var arrivals: Binder<Station> {
-//		Binder(self.base) { store, value in
-//			store.send(.arrivalDepartures(.arrivals(value.id)))
-//		}
-//	}
-	
 	var fetch: Binder<(Bool)> {
 		Binder(self.base) { store, value in
 			store.send(StargazerViewAction.stargazer(StargazersAction.fetch))
