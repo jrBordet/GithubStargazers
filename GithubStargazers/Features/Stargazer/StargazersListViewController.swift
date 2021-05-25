@@ -40,6 +40,8 @@ extension Reactive where Base: Store<StargazerViewState, StargazerViewAction> {
 
 class StargazersListViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet var ownerField: UITextField!
+	@IBOutlet var repoField: UITextField!
 	
 	// MARK: Store
 	

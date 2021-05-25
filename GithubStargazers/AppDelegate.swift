@@ -20,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		//FirebaseApp.configure()
 		
-		if let clientID = ProcessInfo.processInfo.environment["BASE_URL"] {
-			print(clientID)
-		} else {
-			fatalError()
-		}
+//		if let clientID = ProcessInfo.processInfo.environment["BASE_URL"] {
+//			print(clientID)
+//		} else {
+//			fatalError()
+//		}
 		
 		#if MOCK
 			print("[MOCK]")

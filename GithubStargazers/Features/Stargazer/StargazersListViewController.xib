@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StargazersListViewController" customModule="GithubStargazers" customModuleProvider="target">
             <connections>
+                <outlet property="ownerField" destination="kFG-6N-lsv" id="l7R-QI-wNC"/>
+                <outlet property="repoField" destination="JwK-YW-d5p" id="OAX-CE-7VQ"/>
                 <outlet property="tableView" destination="RQo-xn-ea4" id="Khe-7D-rIb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,19 +23,43 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RQo-xn-ea4">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="164" width="414" height="698"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u2D-KX-2OL">
+                    <rect key="frame" x="0.0" y="44" width="414" height="112"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="owner" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFG-6N-lsv">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="XVQ-vA-6up"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JwK-YW-d5p">
+                            <rect key="frame" x="0.0" y="56" width="414" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="s9b-38-W2W"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="RQo-xn-ea4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4tU-uR-faZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RQo-xn-ea4" secondAttribute="trailing" id="DjC-qN-qfA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RQo-xn-ea4" secondAttribute="bottom" id="KY9-rg-mO3"/>
+                <constraint firstItem="u2D-KX-2OL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Mip-J8-pDy"/>
+                <constraint firstItem="RQo-xn-ea4" firstAttribute="top" secondItem="u2D-KX-2OL" secondAttribute="bottom" constant="8" id="awe-L9-6Po"/>
+                <constraint firstItem="u2D-KX-2OL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hbU-Ya-d6g"/>
                 <constraint firstItem="RQo-xn-ea4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kl5-nJ-F4N"/>
+                <constraint firstItem="u2D-KX-2OL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lEo-3s-AGT"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
     <resources>
