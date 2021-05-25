@@ -21,7 +21,7 @@ extension StargazerViewEnvironment {
 
 extension StargazersEnvironment {
 	static var live = Self(
-		fetch: { owner, repo, page in
+		fetch: { repo, owner, page in
 			let request = StargazerRequest(
 				owner: owner,
 				repo: repo,

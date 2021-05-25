@@ -69,13 +69,22 @@ class StargazersListViewController: UIViewController {
 		
 	// MARK: - Life cycle
 	
+	@objc func addTapped() {
+		store?.send(StargazerViewAction.stargazer(StargazersAction.fetch))
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		guard let store = self.store else {
 			return
 		}
-				
+		
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+		let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+
+		navigationItem.rightBarButtonItems = [add]
+
 		// MARK: - Config cell
 		
 		tableView.rowHeight = 56
@@ -145,7 +154,7 @@ class StargazersListViewController: UIViewController {
 	private func setupDataSource() {
 		dataSource = RxTableViewSectionedAnimatedDataSource<ArrivalsDeparturesListSectionModel>(
 			animationConfiguration: AnimationConfiguration(
-				insertAnimation: .right,
+				insertAnimation: .bottom,
 				reloadAnimation: .none
 			),
 			configureCell: configureCell
