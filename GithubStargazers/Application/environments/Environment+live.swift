@@ -23,31 +23,8 @@ extension StargazersEnvironment {
 	static var live = Self(
 		fetch: { owner, repo, page in
 			let request = StargazerRequest(
-				owner: "octocat",
-				repo: "hello-world",
-				page: 1
-			)
-			
-			return request
-				.execute(with: URLSession.shared)
-				.map { (model: [StargazerRequestModel]) -> [StargazersModel] in
-					model.map { (m: StargazerRequestModel) -> StargazersModel in
-						StargazersModel(
-							name: m.login,
-							imageUrl: URL(string: m.avatar_url)
-						)
-					}
-				}
-		}
-	)
-}
-
-extension StargazersEnvironment {
-	static var mock = Self(
-		fetch: { _, _, page in
-			let request = StargazerRequest(
-				owner: "octocat",
-				repo: "hello-world",
+				owner: owner,
+				repo: repo,
 				page: page
 			)
 			
@@ -55,12 +32,24 @@ extension StargazersEnvironment {
 				.execute(with: URLSession.shared)
 				.map { (model: [StargazerRequestModel]) -> [StargazersModel] in
 					model.map { (m: StargazerRequestModel) -> StargazersModel in
-						StargazersModel(
+						let model = StargazersModel(
 							name: m.login,
 							imageUrl: URL(string: m.avatar_url)
 						)
+						
+						return model
 					}
 				}
 		}
 	)
 }
+
+/**
+
+let request = StargazerRequest(
+	owner: "octocat",
+	repo: "hello-world",
+	page: page
+)
+
+*/

@@ -16,6 +16,11 @@ public func stargazerReducer(
 	switch action {
 	case .fetch:
 		state.isLoading = true
+		
+		guard state.owner.isEmpty == false && state.repo.isEmpty == false else {
+			return []
+		}
+		
 		return [
 			environment.fetch(state.owner, state.repo, state.currentPage).map { StargazersAction.fetchResponse($0) }
 		]
@@ -26,9 +31,15 @@ public func stargazerReducer(
 			return []
 		}
 		
-		state.list = result
+		state.list.append(contentsOf: result)
 		state.currentPage = state.currentPage + 1
 		
+		return []
+	case let .owner(v):
+		state.owner = v
+		return []
+	case let .repo(v):
+		state.repo = v
 		return []
 	}
 }
@@ -45,7 +56,17 @@ extension StargazersModel: Equatable { }
 extension StargazersModel {
 	static var empty = Self(
 		name: "",
-		imageUrl: nil
+		imageUrl: URL(string: "https://avatars.githubusercontent.com/u/557010?v=4")!
+	)
+	
+	static var sample = Self(
+		name: "ryagas",
+		imageUrl: URL(string: "https://avatars.githubusercontent.com/u/553981?v=4")!
+	)
+	
+	static var sample_1 = Self(
+		name: "kjaikeerthi",
+		imageUrl: URL(string: "https://avatars.githubusercontent.com/u/351510?v=4")!
 	)
 }
 
@@ -91,11 +112,23 @@ extension StargazersState {
 public enum StargazersAction: Equatable {
 	case fetch
 	case fetchResponse([StargazersModel])
+	case owner(String)
+	case repo(String)
 }
 
 // MARK: - Environment
 
 public struct StargazersEnvironment {
+	/// Lists the people that have starred the repository.
+	///
+	/// ```
+	/// fetch("octocat", "hello-world", 2)
+	/// ```
+	///
+	/// - Parameter owner: a `String`
+	/// - Parameter repo: a `String`
+	/// - Parameter page: a `Int`
+	/// - Returns:  a collection of `StargazersModel`.
 	var fetch: (String, String, Int) -> Effect<[StargazersModel]>
 }
 

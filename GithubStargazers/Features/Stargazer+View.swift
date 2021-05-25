@@ -64,6 +64,15 @@ extension StargazerViewState {
 		alert: nil,
 		currentPage: 1
 	)
+	
+	static var sample = Self(
+		list: [],
+		repo: "octocat",
+		owner: "hello-world",
+		isLoading: false,
+		alert: nil,
+		currentPage: 1
+	)
 }
 
 public enum StargazerViewAction: Equatable {

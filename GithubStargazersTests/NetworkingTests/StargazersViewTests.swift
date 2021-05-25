@@ -14,10 +14,28 @@ import RxCocoa
 import RxComposableArchitectureTests
 
 class StargazersViewTests: XCTestCase {
-	let env = StargazerViewEnvironment(
+	let env_empty = StargazerViewEnvironment(
 		stargazersEnv: StargazersEnvironment(
 			fetch: { _, _, _ in
 				.just([])
+			}
+		)
+	)
+	
+	let env_filled = StargazerViewEnvironment(
+		stargazersEnv: StargazersEnvironment(
+			fetch: { _, _, page in
+				if page == 1 {
+					return .just([
+						.sample
+					])
+				} else if page == 2 {
+					return .just([
+						.sample_1
+					])
+				} else {
+					return .just([])
+				}
 			}
 		)
 	)
@@ -29,17 +47,47 @@ class StargazersViewTests: XCTestCase {
 		// Put teardown code here. This method is called after the invocation of each test method in the class.
 	}
 	
-	func testStargazersFetch() {
+	func testStargazersFetchOwnerRepo() {
 		assert(
 			initialValue: .empty,
 			reducer: stargazerViewReducer,
-			environment: env,
-			steps: Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
+			environment: env_filled,
+			steps: Step(.send, StargazerViewAction.stargazer(.owner("octocat")), { state in
+				state.owner = "octocat"
+			}), Step(.send, StargazerViewAction.stargazer(.repo("hello-world")), { state in
+				state.repo = "hello-world"
+			}),
+			Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
 				state.isLoading = true
 			}),
-			Step(.receive, StargazerViewAction.stargazer(StargazersAction.fetchResponse([])), { state in
+			Step(.receive, StargazerViewAction.stargazer(StargazersAction.fetchResponse([.sample])), { state in
 				state.isLoading = false
-				state.currentPage = 1
+				state.currentPage = 2
+				state.list = [
+					.sample
+				]
+			}),
+			Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
+				state.isLoading = true
+			}),
+			Step(.receive, StargazerViewAction.stargazer(StargazersAction.fetchResponse([.sample_1])), { state in
+				state.isLoading = false
+				state.currentPage = 3
+				state.list = [
+					.sample,
+					.sample_1
+				]
+			})
+		)
+	}
+	
+	func testStargazersFetch_empty_owner_and_repo() {
+		assert(
+			initialValue: .empty,
+			reducer: stargazerViewReducer,
+			environment: env_empty,
+			steps: Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
+				state.isLoading = true
 			})
 		)
 	}

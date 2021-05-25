@@ -9,17 +9,31 @@ import Foundation
 import RxComposableArchitecture
 import SwiftPrettyPrint
 
+#if MOCK
 var applicationStore: Store<AppState, AppAction> =
   Store(
-    initialValue: initialAppState,
-    reducer: with(
-      appReducer,
-      compose(
+	initialValue: initialAppState,
+	reducer: with(
+	  appReducer,
+	  compose(
 		customLogging,
-        activityFeed
-    )),
+		activityFeed
+	)),
+	environment: AppEnvironment.mock
+)
+#else
+var applicationStore: Store<AppState, AppAction> =
+  Store(
+	initialValue: initialAppState,
+	reducer: with(
+	  appReducer,
+	  compose(
+		customLogging,
+		activityFeed
+	)),
 	environment: AppEnvironment.live
 )
+#endif
 
 
 public func customLogging<Value, Action, Environment>(

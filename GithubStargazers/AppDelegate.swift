@@ -30,47 +30,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			print("[MOCK]")
 		#endif
 		
-		let request = StargazerRequest(
-			owner: "octocat",
-			repo: "hello-world"
+		let rootScene = Scene<StargazersListViewController>().render()
+		
+		rootScene.store = applicationStore.view(
+			value: { $0.starGazersFeature },
+			action: { .stargazer($0) }
 		)
-
-		let result = try request
-			.execute(with: URLSession.shared)
-			.catchErrorJustReturn([])
-			.subscribe(onNext: { value in
-				dump(value)
-			})
 		
-//		let rootScene = Scene<HomeTabViewController>().render()
-//
-//		rootScene.store = applicationStore.view(
-//			value: { $0.homeState },
-//			action: { .home($0) }
-//		)
-		
-//		self.window?.rootViewController = UINavigationController(rootViewController: rootScene)
-		
-		self.window?.rootViewController = UINavigationController(rootViewController: UIViewController())
-		
+		self.window?.rootViewController = UINavigationController(rootViewController: rootScene)
+				
 		self.window?.makeKeyAndVisible()
 		self.window?.backgroundColor = .white
 		
 		return true
 	}
-}
-
-struct Factory {
-//	static var stations: StationsViewController = Scene<StationsViewController>().render()
-	
-	//	static func stations(with store: Store<AppState, AppAction>) -> StationsViewController {
-	//		let vc = Scene<StationsViewController>().render()
-	//
-	//		vc.store = store.view(
-	//			value: { $0.stations },
-	//			action: { .stations($0) }
-	//		)
-	//
-	//		return vc
-	//	}
 }

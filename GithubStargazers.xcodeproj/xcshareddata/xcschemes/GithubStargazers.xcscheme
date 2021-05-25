@@ -28,7 +28,8 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "NO"
       codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
+      localizableStringsDataGatheringEnabled = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -51,6 +52,13 @@
             BlueprintIdentifier = "D515C9914D8F9211FB7924C9"
             BuildableName = "GithubStargazers.app"
             BlueprintName = "GithubStargazers"
+            ReferencedContainer = "container:GithubStargazers.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "788E5DD354878331E4C414AD"
+            BuildableName = "GithubStargazersMock.app"
+            BlueprintName = "GithubStargazersMock"
             ReferencedContainer = "container:GithubStargazers.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>

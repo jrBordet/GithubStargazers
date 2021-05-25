@@ -24,11 +24,13 @@ class ApplicationTests: XCTestCase {
 	}
 	
 	func testApplication() throws {
-		let mock =  StargazerViewEnvironment(
+		let mock = StargazerViewEnvironment(
 			stargazersEnv:
 				StargazersEnvironment(
 					fetch: { _, _, _ in
-						.just([])
+						.just([
+							.sample
+						])
 					}
 				)
 		)
@@ -37,19 +39,22 @@ class ApplicationTests: XCTestCase {
 			initialValue: AppState(starGazers: StargazerViewState.empty),
 			reducer: appReducer,
 			environment: AppEnvironment(stargazersEnv: mock),
-			steps: Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.fetch)), { state in
+			steps: Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.owner("octocat"))), { state in
+				state.starGazers.owner = "octocat"
+			}), Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.repo("hello-world"))), { state in
+				state.starGazers.repo = "hello-world"
+			}),	Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.fetch)), { state in
 				state.starGazers.isLoading = true
-			}), Step(.receive, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.fetchResponse([]))), { state in
+			}), Step(.receive, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.fetchResponse([StargazersModel.sample]))), { state in
 				state.starGazers.isLoading = false
+				
+				state.starGazers.currentPage = 2
+				
+				state.starGazers.list = [
+					StargazersModel.sample
+				]
 			})
 		)
-	}
-	
-	func testPerformanceExample() throws {
-		// This is an example of a performance test case.
-		self.measure {
-			// Put the code you want to measure the time of here.
-		}
 	}
 	
 }

@@ -16,7 +16,20 @@ public struct AppState {
 
 extension AppState: Equatable { }
 
+extension AppState {
+	var starGazersFeature: StargazerViewState {
+		get {
+			self.starGazers
+		}
+		set {
+			self.starGazers = newValue
+		}
+	}
+}
+
 let initialAppState = AppState(
-	starGazers: .empty
+	starGazers: .sample
 )
 
+// empty
+// sample
