@@ -80,28 +80,12 @@ class StargazersListViewController: UIViewController {
 	static let startLoadingOffset: CGFloat = 20.0
 
 	static func isNearTheBottomEdge(contentOffset: CGPoint, _ tableView: UITableView) -> Bool {
-//		let y = contentOffset.y
-//		let height = tableView.frame.size.height
-//		let contentSizeHeight = tableView.contentSize.height
-				
 		let height = tableView.frame.size.height
 		let contentYoffset = tableView.contentOffset.y
 		let distanceFromBottom = tableView.contentSize.height - contentYoffset
 		
-//		if distanceFromBottom < height {
-//			print("[StargazersListViewController] reached the bottom")
-//			return false
-//		} else {
-//			return true
-//		}
-				
-		if distanceFromBottom < height {
-			//print("[StargazersListViewController] reached the bottom")
-			return true
-		} else {
-			return false
-		}
-		
+
+		return distanceFromBottom < height
 		//return contentOffset.y + tableView.frame.size.height + startLoadingOffset > tableView.contentSize.height
 	}
 		
