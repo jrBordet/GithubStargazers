@@ -172,7 +172,7 @@ extension StargazersListViewController {
 				return UITableViewCell(style: .default, reuseIdentifier: nil)
 			}
 			
-			cell.nameLabel.text = item.name
+			cell.nameLabel.text = item.name.lowercased()
 			
 			if let url = item.imageUrl {
 				cell.avatarImage?.load(url: url)

@@ -10,7 +10,11 @@ import UIKit
 class StargazerCell: UITableViewCell {
 	
 	@IBOutlet var nameLabel: UILabel!
-	@IBOutlet var avatarImage: UIImageView!
+	@IBOutlet var avatarImage: UIImageView! {
+		didSet {
+			avatarImage.layer.cornerRadius = 4.0
+		}
+	}
 	
 	public var avatarUrl: URL?
 

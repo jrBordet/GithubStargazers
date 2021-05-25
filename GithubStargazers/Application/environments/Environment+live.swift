@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 extension AppEnvironment {
 	static var live = Self(
@@ -27,6 +29,14 @@ extension StargazersEnvironment {
 				repo: repo,
 				page: page
 			)
+			
+			request
+				.execute()
+				.retryWhen { e -> Observable<Bool> in
+					
+					
+					return .just(true)
+				}
 			
 			return request
 				.execute(with: URLSession.shared)

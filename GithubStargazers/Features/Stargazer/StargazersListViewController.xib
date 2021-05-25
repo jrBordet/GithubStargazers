@@ -22,40 +22,50 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RQo-xn-ea4">
-                    <rect key="frame" x="0.0" y="164" width="414" height="698"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u2D-KX-2OL">
-                    <rect key="frame" x="0.0" y="44" width="414" height="112"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u2D-KX-2OL">
+                    <rect key="frame" x="15" y="44" width="384" height="117"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="octocat" borderStyle="roundedRect" placeholder="owner" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFG-6N-lsv">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="octocat" placeholder="owner" textAlignment="natural" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="kFG-6N-lsv">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="56"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="XVQ-vA-6up"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hello-world" borderStyle="roundedRect" placeholder="repo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JwK-YW-d5p">
-                            <rect key="frame" x="0.0" y="56" width="414" height="56"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hello-world" placeholder="repo" textAlignment="natural" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JwK-YW-d5p">
+                            <rect key="frame" x="0.0" y="61" width="384" height="56"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="s9b-38-W2W"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26u-JK-zyB">
+                    <rect key="frame" x="0.0" y="161" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="xhU-Fi-Kpq"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RQo-xn-ea4">
+                    <rect key="frame" x="0.0" y="169" width="414" height="693"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="26u-JK-zyB" firstAttribute="top" secondItem="u2D-KX-2OL" secondAttribute="bottom" id="CD8-wo-Bzi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RQo-xn-ea4" secondAttribute="trailing" id="DjC-qN-qfA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RQo-xn-ea4" secondAttribute="bottom" id="KY9-rg-mO3"/>
-                <constraint firstItem="u2D-KX-2OL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Mip-J8-pDy"/>
+                <constraint firstItem="u2D-KX-2OL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-15" id="Mip-J8-pDy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="26u-JK-zyB" secondAttribute="trailing" id="aS1-ya-jsC"/>
                 <constraint firstItem="RQo-xn-ea4" firstAttribute="top" secondItem="u2D-KX-2OL" secondAttribute="bottom" constant="8" id="awe-L9-6Po"/>
-                <constraint firstItem="u2D-KX-2OL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hbU-Ya-d6g"/>
+                <constraint firstItem="u2D-KX-2OL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="hbU-Ya-d6g"/>
+                <constraint firstItem="26u-JK-zyB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jKB-zV-1hd"/>
                 <constraint firstItem="RQo-xn-ea4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kl5-nJ-F4N"/>
                 <constraint firstItem="u2D-KX-2OL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lEo-3s-AGT"/>
             </constraints>
