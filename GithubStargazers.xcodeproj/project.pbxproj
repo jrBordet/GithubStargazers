@@ -80,6 +80,10 @@
 		F8952B3D265D6FB60048FCA9 /* Environment+live.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D08A265C34B000D29BAA /* Environment+live.swift */; };
 		F8952BBA265EAEED0048FCA9 /* Search+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */; };
 		F8952BBB265EAEED0048FCA9 /* Search+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */; };
+		F8952BCA265EB14A0048FCA9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BC8265EB14A0048FCA9 /* SearchViewController.swift */; };
+		F8952BCB265EB14A0048FCA9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BC8265EB14A0048FCA9 /* SearchViewController.swift */; };
+		F8952BCC265EB14A0048FCA9 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8952BC9265EB14A0048FCA9 /* SearchViewController.xib */; };
+		F8952BCD265EB14A0048FCA9 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8952BC9265EB14A0048FCA9 /* SearchViewController.xib */; };
 		F8AC5E7D265D6C160052A205 /* Environment+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC5E7C265D6C160052A205 /* Environment+mock.swift */; };
 		F8AC5E7E265D6C160052A205 /* Environment+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC5E7C265D6C160052A205 /* Environment+mock.swift */; };
 		F8C9D002265BD81000D29BAA /* StargazerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D001265BD81000D29BAA /* StargazerRequest.swift */; };
@@ -172,6 +176,8 @@
 		F8952B4F265EA1440048FCA9 /* testApplication.4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplication.4.png; sourceTree = "<group>"; };
 		F8952B96265EAE150048FCA9 /* testApplicationUI.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplicationUI.1.png; sourceTree = "<group>"; };
 		F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search+Feature.swift"; sourceTree = "<group>"; };
+		F8952BC8265EB14A0048FCA9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F8952BC9265EB14A0048FCA9 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		F8AC5E7C265D6C160052A205 /* Environment+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+mock.swift"; sourceTree = "<group>"; };
 		F8C9D001265BD81000D29BAA /* StargazerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerRequest.swift; sourceTree = "<group>"; };
 		F8C9D009265BF28600D29BAA /* StargazersViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersViewTests.swift; sourceTree = "<group>"; };
@@ -474,6 +480,8 @@
 			isa = PBXGroup;
 			children = (
 				F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */,
+				F8952BC8265EB14A0048FCA9 /* SearchViewController.swift */,
+				F8952BC9265EB14A0048FCA9 /* SearchViewController.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -603,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5AC2E32B9B33FB3E6A6572 /* Assets.xcassets in Resources */,
+				F8952BCC265EB14A0048FCA9 /* SearchViewController.xib in Resources */,
 				7E7EEA548771E71AE9D5826C /* Localizable.strings in Resources */,
 				509AFBA8BFCB03A1C4F9D6E7 /* arrivals.json in Resources */,
 				F8C9D10B265CD2BD00D29BAA /* StargazerCell.xib in Resources */,
@@ -628,6 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F132280AC0FD8976560FC78 /* Assets.xcassets in Resources */,
+				F8952BCD265EB14A0048FCA9 /* SearchViewController.xib in Resources */,
 				92FF4E3F103B0C6FF37A5399 /* Localizable.strings in Resources */,
 				B53B2EB2C1CFEC178BC8D461 /* arrivals.json in Resources */,
 				F8C9D10C265CD2BD00D29BAA /* StargazerCell.xib in Resources */,
@@ -803,6 +813,7 @@
 				5AA7AA0247055198203A9B8E /* BaseViewController.swift in Sources */,
 				F8AC5E7E265D6C160052A205 /* Environment+mock.swift in Sources */,
 				F9939C68E1B29FFD86BFCC74 /* Application+Environment.swift in Sources */,
+				F8952BCB265EB14A0048FCA9 /* SearchViewController.swift in Sources */,
 				F969434938574005E1482DDD /* Localizable.swift in Sources */,
 				D1693720CBC6644BEABFE0D4 /* Mock+.swift in Sources */,
 				F8952B3D265D6FB60048FCA9 /* Environment+live.swift in Sources */,
@@ -834,6 +845,7 @@
 				632CAD3E816D64AC3697B6A5 /* Application+Environment.swift in Sources */,
 				FB333780396419D8C1FBA687 /* Localizable.swift in Sources */,
 				912B9478080E66C3E0FF5902 /* Mock+.swift in Sources */,
+				F8952BCA265EB14A0048FCA9 /* SearchViewController.swift in Sources */,
 				2792EF997EB348E17A014CFB /* Networking.swift in Sources */,
 				AA506D5F6CB87E1FA757702C /* Rate.swift in Sources */,
 				F8C9D04E265C2C5500D29BAA /* Stargazer+Feature.swift in Sources */,

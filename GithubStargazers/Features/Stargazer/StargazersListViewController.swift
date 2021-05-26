@@ -10,6 +10,7 @@ import RxDataSources
 import RxSwift
 import RxCocoa
 import RxComposableArchitecture
+import SceneBuilder
 
 extension Store: ReactiveCompatible {}
 
@@ -75,15 +76,28 @@ class StargazersListViewController: UIViewController {
 		let contentYoffset = tableView.contentOffset.y
 		let distanceFromBottom = tableView.contentSize.height - contentYoffset
 		
-
 		return distanceFromBottom < height
 		//return contentOffset.y + tableView.frame.size.height + startLoadingOffset > tableView.contentSize.height
 	}
 		
 	// MARK: - Life cycle
 	
-	@objc func addTapped() {
-		store?.send(StargazerViewAction.stargazer(StargazersAction.fetch))
+	@objc func searchTapped() {
+		let searchScene = Scene<SearchViewController>().render()
+		
+		searchScene.store = self.store
+		
+		searchScene.closeClosure = { [weak self] in
+			self?.store?.send(StargazerViewAction.stargazer(StargazersAction.fetch))
+		}
+		
+		self.navigationController?.present(searchScene, animated: true, completion: nil)
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+				
+//		self.store?.send(StargazerViewAction.stargazer(StargazersAction.fetch))
 	}
 	
 	override func viewDidLoad() {
@@ -95,10 +109,10 @@ class StargazersListViewController: UIViewController {
 			return
 		}
 		
-		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-		let add = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(addTapped))
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(searchTapped))
+		let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
 
-		navigationItem.rightBarButtonItems = [add]
+		navigationItem.rightBarButtonItems = [search]
 
 		// MARK: - Config cell
 		
@@ -199,7 +213,7 @@ class StargazersListViewController: UIViewController {
 	private func setupDataSource() {
 		dataSource = RxTableViewSectionedAnimatedDataSource<ArrivalsDeparturesListSectionModel>(
 			animationConfiguration: AnimationConfiguration(
-				insertAnimation: .bottom,
+				insertAnimation: .none,
 				reloadAnimation: .none
 			),
 			configureCell: configureCell
