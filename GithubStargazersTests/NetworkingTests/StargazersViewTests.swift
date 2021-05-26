@@ -176,7 +176,7 @@ class StargazersViewTests: XCTestCase {
 				state.isLoading = true
 			}), Step(.receive, StargazerViewAction.stargazer(StargazersAction.fetchResponse([.notFound])), { state in
 				state.isLoading = false
-				state.currentPage = 0
+				state.currentPage = 1
 				state.list = []
 				
 				state.alert = "not found"

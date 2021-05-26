@@ -35,6 +35,8 @@ public func stargazerReducer(
 		
 		if result == [.notFound] {
 			state.alert = "not found"
+			state.currentPage = 1
+			state.list = []
 			return []
 		} else {
 			state.alert = nil
@@ -45,10 +47,23 @@ public func stargazerReducer(
 		
 		return []
 	case let .owner(v):
+		state.currentPage = 1
+		state.list = []
+		
 		state.owner = v
 		return []
 	case let .repo(v):
+		state.currentPage = 1
+		state.list = []
+		
 		state.repo = v
+		return []
+	case .purge:
+		state.list = []
+		state.isLoading = false
+		state.alert = nil
+		state.currentPage = 1
+		
 		return []
 	}
 }
@@ -124,6 +139,7 @@ extension StargazersState {
 // MARK: - Action
 
 public enum StargazersAction: Equatable {
+	case purge
 	case fetch
 	case fetchResponse([StargazersModel])
 	case owner(String)

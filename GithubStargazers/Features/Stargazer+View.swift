@@ -57,12 +57,14 @@ public struct StargazerViewState: Equatable {
 	var search: SearchState {
 		get {
 			SearchState(
+				list: self.list,
 				repo: self.repo,
 				owner: self.owner
 			)
 		}
 		
 		set {
+			self.list = newValue.list
 			self.repo = newValue.repo
 			self.owner = newValue.owner
 		}

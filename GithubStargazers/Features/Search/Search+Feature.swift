@@ -16,9 +16,13 @@ public func searchReducer(
 	switch action {
 	case let .owner(v):
 		state.owner = v
+		//state.list = []
+		
 		return []
 	case let .repo(v):
 		state.repo = v
+		//state.list = []
+		
 		return []
 	}
 }
@@ -26,13 +30,16 @@ public func searchReducer(
 // MARK: - State
 
 public struct SearchState  {
+	var list: [StargazersModel]
 	var repo: String
 	var owner: String
 	
 	public init(
+		list: [StargazersModel],
 		repo: String,
 		owner: String
 	) {
+		self.list = list
 		self.repo = repo
 		self.owner = owner
 	}
@@ -40,6 +47,7 @@ public struct SearchState  {
 
 extension SearchState {
 	static var empty = Self(
+		list: [],
 		repo: "",
 		owner: ""
 	)

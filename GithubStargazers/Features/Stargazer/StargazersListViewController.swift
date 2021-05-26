@@ -85,9 +85,21 @@ class StargazersListViewController: UIViewController {
 	@objc func searchTapped() {
 		let searchScene = Scene<SearchViewController>().render()
 		
-		searchScene.store = self.store
+		/**
+		rootScene.store = applicationStore.view(
+			value: { $0.starGazersFeature },
+			action: { .stargazer($0) }
+		
+		*/
+		
+		searchScene.store = self.store?.view(
+			value: { $0.search },
+			action: { .search($0) }
+		)
 		
 		searchScene.closeClosure = { [weak self] in
+			self?.store?.send(StargazerViewAction.stargazer(StargazersAction.purge))
+
 			self?.store?.send(StargazerViewAction.stargazer(StargazersAction.fetch))
 		}
 		

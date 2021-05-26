@@ -11,6 +11,20 @@ import RxSwift
 import RxCocoa
 import RxComposableArchitecture
 
+extension Reactive where Base: Store<SearchState, SearchAction> {
+	var owner: Binder<(String)> {
+		Binder(self.base) { store, value in
+			store.send(SearchAction.owner(value))
+		}
+	}
+	
+	var repo: Binder<(String)> {
+		Binder(self.base) { store, value in
+			store.send(SearchAction.repo(value))
+		}
+	}
+}
+
 class SearchViewController: UIViewController {
 	@IBOutlet var confirmButton: UIButton!
 	@IBOutlet var purgeButton: UIButton!
@@ -20,7 +34,7 @@ class SearchViewController: UIViewController {
 	
 	// MARK: Store
 	
-	public var store: Store<StargazerViewState, StargazerViewAction>?
+	public var store: Store<SearchState, SearchAction>?
 	
 	private let disposeBag = DisposeBag()
 	
@@ -60,11 +74,8 @@ class SearchViewController: UIViewController {
 		purgeButton.rx
 			.tap
 			.bind {
-				store.send(StargazerViewAction.search(SearchAction.owner("")))
-				
-				store.send(StargazerViewAction.search(SearchAction.repo("")))
-				
-//				self?.dismiss(animated: true, completion: nil)
+				store.send(SearchAction.owner(""))
+				store.send(SearchAction.repo(""))
 			}.disposed(by: disposeBag)
 		
 		// MARK: - owner
