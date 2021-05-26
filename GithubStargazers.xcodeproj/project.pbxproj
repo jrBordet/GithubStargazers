@@ -78,6 +78,8 @@
 		F8952B35265D6F0C0048FCA9 /* Stargazer+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D04D265C2C5500D29BAA /* Stargazer+Feature.swift */; };
 		F8952B39265D6F980048FCA9 /* StargazerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D001265BD81000D29BAA /* StargazerRequest.swift */; };
 		F8952B3D265D6FB60048FCA9 /* Environment+live.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D08A265C34B000D29BAA /* Environment+live.swift */; };
+		F8952BBA265EAEED0048FCA9 /* Search+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */; };
+		F8952BBB265EAEED0048FCA9 /* Search+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */; };
 		F8AC5E7D265D6C160052A205 /* Environment+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC5E7C265D6C160052A205 /* Environment+mock.swift */; };
 		F8AC5E7E265D6C160052A205 /* Environment+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC5E7C265D6C160052A205 /* Environment+mock.swift */; };
 		F8C9D002265BD81000D29BAA /* StargazerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D001265BD81000D29BAA /* StargazerRequest.swift */; };
@@ -169,6 +171,7 @@
 		F8952B4E265EA1440048FCA9 /* testApplication.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplication.3.png; sourceTree = "<group>"; };
 		F8952B4F265EA1440048FCA9 /* testApplication.4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplication.4.png; sourceTree = "<group>"; };
 		F8952B96265EAE150048FCA9 /* testApplicationUI.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplicationUI.1.png; sourceTree = "<group>"; };
+		F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search+Feature.swift"; sourceTree = "<group>"; };
 		F8AC5E7C265D6C160052A205 /* Environment+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+mock.swift"; sourceTree = "<group>"; };
 		F8C9D001265BD81000D29BAA /* StargazerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerRequest.swift; sourceTree = "<group>"; };
 		F8C9D009265BF28600D29BAA /* StargazersViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersViewTests.swift; sourceTree = "<group>"; };
@@ -432,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				F8C9D052265C2CBF00D29BAA /* Stargazer+View.swift */,
+				F8952BB8265EAEDB0048FCA9 /* Search */,
 				F8C9D0BC265CCBD400D29BAA /* Stargazer */,
 			);
 			path = Features;
@@ -464,6 +468,14 @@
 				F8952B49265EA0EA0048FCA9 /* testApplication.1.png */,
 			);
 			path = ApplicationTests;
+			sourceTree = "<group>";
+		};
+		F8952BB8265EAEDB0048FCA9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		F8C9D0AD265C35EC00D29BAA /* environments */ = {
@@ -786,6 +798,7 @@
 				775877964759A2A7C56DAA79 /* Application+State.swift in Sources */,
 				F542603228C51574C40E9254 /* Application+Store.swift in Sources */,
 				F8952B39265D6F980048FCA9 /* StargazerRequest.swift in Sources */,
+				F8952BBB265EAEED0048FCA9 /* Search+Feature.swift in Sources */,
 				1DCAEFF1D28E6744A58F2237 /* ArrivalsRequest.swift in Sources */,
 				5AA7AA0247055198203A9B8E /* BaseViewController.swift in Sources */,
 				F8AC5E7E265D6C160052A205 /* Environment+mock.swift in Sources */,
@@ -816,6 +829,7 @@
 				D761DD3B6B31D6B9C960ED3C /* Application+State.swift in Sources */,
 				86E1B285D503D8E91825B3A4 /* Application+Store.swift in Sources */,
 				9970CE15FD1DBC33A4A094DC /* ArrivalsRequest.swift in Sources */,
+				F8952BBA265EAEED0048FCA9 /* Search+Feature.swift in Sources */,
 				C5903DC025D1BF9BFAA5FCC4 /* BaseViewController.swift in Sources */,
 				632CAD3E816D64AC3697B6A5 /* Application+Environment.swift in Sources */,
 				FB333780396419D8C1FBA687 /* Localizable.swift in Sources */,

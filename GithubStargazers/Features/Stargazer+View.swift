@@ -53,6 +53,20 @@ public struct StargazerViewState: Equatable {
 			self.currentPage = newValue.currentPage
 		}
 	}
+	
+	var search: SearchState {
+		get {
+			SearchState(
+				repo: self.repo,
+				owner: self.owner
+			)
+		}
+		
+		set {
+			self.repo = newValue.repo
+			self.owner = newValue.owner
+		}
+	}
 }
 
 extension StargazerViewState {
@@ -89,6 +103,7 @@ extension StargazerViewState {
 
 public enum StargazerViewAction: Equatable {
 	case stargazer(StargazersAction)
+	case search(SearchAction)
 }
 
 public struct StargazerViewEnvironment {
@@ -101,5 +116,11 @@ public let stargazerViewReducer: Reducer<StargazerViewState, StargazerViewAction
 		value: \StargazerViewState.stargazer,
 		action: /StargazerViewAction.stargazer,
 		environment: { $0.stargazersEnv }
+	),
+	pullback(
+		searchReducer,
+		value: \StargazerViewState.search,
+		action: /StargazerViewAction.search,
+		environment: { _ in SearchEnvironment() }
 	)
 )
