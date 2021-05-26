@@ -36,12 +36,25 @@ extension Reactive where Base: Store<StargazerViewState, StargazerViewAction> {
 			store.send(StargazerViewAction.stargazer(StargazersAction.fetch))
 		}
 	}
+	
+	var owner: Binder<(String)> {
+		Binder(self.base) { store, value in
+			store.send(StargazerViewAction.stargazer(StargazersAction.owner(value)))
+		}
+	}
+	
+	var repo: Binder<(String)> {
+		Binder(self.base) { store, value in
+			store.send(StargazerViewAction.stargazer(StargazersAction.repo(value)))
+		}
+	}
 }
 
 class StargazersListViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet var ownerField: UITextField!
 	@IBOutlet var repoField: UITextField!
+	@IBOutlet var notFoundLabel: UILabel!
 	
 	// MARK: Store
 	
@@ -76,18 +89,20 @@ class StargazersListViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.title = L10n.App.name
+		
 		guard let store = self.store else {
 			return
 		}
 		
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-		let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+		let add = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(addTapped))
 
 		navigationItem.rightBarButtonItems = [add]
 
 		// MARK: - Config cell
 		
-		tableView.rowHeight = 56
+		tableView.rowHeight = 64
 		tableView.separatorColor = .clear
 		
 		registerTableViewCell(
@@ -97,6 +112,22 @@ class StargazersListViewController: UIViewController {
 		)
 		
 		tableView.separatorColor = .lightGray
+		
+		// MARK: - owner
+		
+		ownerField.rx
+			.text
+			.map { $0 ?? "" }
+			.bind(to: store.rx.owner)
+			.disposed(by: disposeBag)
+		
+		// MARK: - repo
+		
+		repoField.rx
+			.text
+			.map { $0 ?? "" }
+			.bind(to: store.rx.repo)
+			.disposed(by: disposeBag)
 		
 		// MARK: - Load next page when table is near the bottom
 		
@@ -116,10 +147,24 @@ class StargazersListViewController: UIViewController {
 				return store.value.map { $0.currentPage }
 			}
 			.distinctUntilChanged()
-			.debug("[StargazersListViewController] currentPage", trimOutput: false)
 			.map { $0 > 0 }
 			.filter { $0 }
 			.bind(to: store.rx.fetch)
+			.disposed(by: disposeBag)
+		
+		// MARK: - not found
+		
+		let alert = store.value
+			.map { $0.alert }
+			.map { $0?.isEmpty == false }
+			.share(replay: 1, scope: .whileConnected)
+		
+		alert
+			.bind(to: notFoundLabel.rx.isVisible)
+			.disposed(by: disposeBag)
+		
+		alert
+			.bind(to: tableView.rx.isHidden)
 			.disposed(by: disposeBag)
 
 		// MARK: - Bind dataSource

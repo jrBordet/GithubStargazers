@@ -23,8 +23,10 @@ extension StargazerViewEnvironment {
 extension StargazersEnvironment {
 	static var mock = Self(
 		fetch: { _, _, page in
-			
 			print("[StargazersEnvironment] mock \(page)")
+			
+			
+			return .just([.notFound])
 			
 			if page == 1 {
 				return .just(page_1_mock())

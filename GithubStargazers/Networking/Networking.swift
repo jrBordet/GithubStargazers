@@ -23,6 +23,9 @@ extension APIRequest {
 	) -> Observable<Self.Response> {
 		return Observable<Self.Response>.create { observer -> Disposable in
 			
+//			observer.onError(APIError.code(HTTPStatusCodes.NotFound))
+//			return Disposables.create()
+			
 			os_log("execute %{public}@ ", log: OSLog.networking, type: .info, ["request", request.debugDescription.removingPercentEncoding])
 			
 			guard let request = self.request else {

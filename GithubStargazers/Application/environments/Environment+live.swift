@@ -23,20 +23,12 @@ extension StargazerViewEnvironment {
 
 extension StargazersEnvironment {
 	static var live = Self(
-		fetch: { repo, owner, page in
+		fetch: { owner, repo, page in
 			let request = StargazerRequest(
 				owner: owner,
 				repo: repo,
 				page: page
 			)
-			
-			request
-				.execute()
-				.retryWhen { e -> Observable<Bool> in
-					
-					
-					return .just(true)
-				}
 			
 			return request
 				.execute(with: URLSession.shared)
@@ -50,16 +42,66 @@ extension StargazersEnvironment {
 						return model
 					}
 				}
+				.catchError { (e: Error) -> Observable<[StargazersModel]> in
+					guard let error = e as? APIError else {
+						return .just([])
+					}
+					
+					switch error {
+					case let .code(value):
+						switch value {
+						case .NotFound:
+							return .just([
+								.notFound
+							])
+						default:
+							return .just([])
+						}
+					default:
+						return .just([])
+					}
+				}
 		}
 	)
 }
 
+//			request
+//				.execute()
+//				.catchError { (e: Error) -> Observable<[StargazerRequestModel]> in
+//					guard let error = e as? APIError else {
+//						return .just([])
+//					}
+//
+//					switch error {
+//					case let .code(value):
+//						return .just([])
+//					default:
+//						return .just([])
+//					}
+//				}
+//				.subscribe()
+//				.retryWhen { e -> Observable<[StargazerRequestModel]> in
+//					e.enumerated().flatMap { (index: Int, element: Error) -> Observable<[StargazerRequestModel]> in
+//						if let error = element as? APIError {
+//							dump(error)
+//							switch error {
+//							case let .code(value):
+//								return .just([])
+//							default:
+//								return .just([])
+//							}
+//						}
+//
+//						return .just([])
+//					}
+//				}.subscribe()
+
 /**
 
 let request = StargazerRequest(
-	owner: "octocat",
-	repo: "hello-world",
-	page: page
+owner: "octocat",
+repo: "hello-world",
+page: page
 )
 
 */

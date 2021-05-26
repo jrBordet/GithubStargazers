@@ -12,61 +12,11 @@ import Foundation
 internal enum L10n {
 
   internal enum App {
-    /// Pendolare Stanco
+    /// GithubStargazers
     internal static let name = L10n.tr("Localizable", "app.name")
-    internal enum Common {
-      /// Arrivals
-      internal static let arrivals = L10n.tr("Localizable", "app.common.arrivals")
-      /// Board
-      internal static let board = L10n.tr("Localizable", "app.common.board")
-      /// Departures
-      internal static let departures = L10n.tr("Localizable", "app.common.departures")
-      /// Dismiss
-      internal static let dismiss = L10n.tr("Localizable", "app.common.dismiss")
-      /// Save
-      internal static let save = L10n.tr("Localizable", "app.common.save")
-      /// X
-      internal static let x = L10n.tr("Localizable", "app.common.x")
-    }
-    internal enum Home {
-      /// Search stations
-      internal static let addStations = L10n.tr("Localizable", "app.home.addStations")
-      /// No stations on your favourites
-      internal static let disclaimer = L10n.tr("Localizable", "app.home.disclaimer")
-      /// +
-      internal static let plus = L10n.tr("Localizable", "app.home.plus")
-    }
-  }
-
-  internal enum Sections {
-    /// No results
-    internal static let empty = L10n.tr("Localizable", "sections.empty")
-  }
-
-  internal enum Stations {
-    /// Search...
-    internal static let searchbar = L10n.tr("Localizable", "stations.searchbar")
-    /// Stations
-    internal static let title = L10n.tr("Localizable", "stations.title")
-    internal enum Header {
-      /// My stations
-      internal static let favourites = L10n.tr("Localizable", "stations.header.favourites")
-      /// Results
-      internal static let results = L10n.tr("Localizable", "stations.header.results")
-    }
-  }
-
-  internal enum Trains {
-    /// My trains
-    internal static let title = L10n.tr("Localizable", "trains.title")
-  }
-
-  internal enum Trend {
-    /// Follow
-    internal static let follow = L10n.tr("Localizable", "trend.follow")
-    internal enum Follow {
-      /// Stop follow
-      internal static let stop = L10n.tr("Localizable", "trend.follow.stop")
+    internal enum Stargazers {
+      /// not found
+      internal static let notfound = L10n.tr("Localizable", "app.stargazers.notfound")
     }
   }
 }

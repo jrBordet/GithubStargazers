@@ -57,9 +57,7 @@
 		B9615B15FC5CE7D74E04F954 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CF1093E08AF841E8EAA13F /* Networking.swift */; };
 		BE7CB5D44F178BCB88621C41 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF47D88A24F878DCA42AFC /* Rate.swift */; };
 		C08C7E71181A50948F4B8308 /* arrivals_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = B761514C6EDE488B2FA055CB /* arrivals_broken.json */; };
-		C2231158C504F2A7A289F1AC /* CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C15C0BEBF97338D094F837C /* CollectionViewDelegate.swift */; };
 		C280D36298600238E56D4183 /* Utils+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80665B7E76F57884A40C54F5 /* Utils+Rx.swift */; };
-		C31E7B188BFA1AE34513F097 /* CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C15C0BEBF97338D094F837C /* CollectionViewDelegate.swift */; };
 		C4E731E654EF5528B046AA70 /* stations_broken.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07DC6376CF9244B71642B551 /* stations_broken.txt */; };
 		C5903DC025D1BF9BFAA5FCC4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF798E0C0D51D3B84B82AE45 /* BaseViewController.swift */; };
 		C594C656A553F8568D762493 /* installations.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5ADFCA4462F78FEE23DA7036 /* installations.csv */; };
@@ -145,7 +143,6 @@
 		80665B7E76F57884A40C54F5 /* Utils+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Rx.swift"; sourceTree = "<group>"; };
 		8AD4B5F172FAFF5D1CDFE460 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B7115A4002D9699800AA0B4 /* Pods_GithubStargazersMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubStargazersMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C15C0BEBF97338D094F837C /* CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegate.swift; sourceTree = "<group>"; };
 		931A40254D4411C757B1AFDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		955420E8896799FF56DB8F2E /* Pods-GithubStargazersMock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStargazersMock.debug.xcconfig"; path = "Target Support Files/Pods-GithubStargazersMock/Pods-GithubStargazersMock.debug.xcconfig"; sourceTree = "<group>"; };
 		97538587E7E00C77C2620096 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
@@ -167,6 +164,11 @@
 		EBEA2417CAC665BB82B8A480 /* Application+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Reducer.swift"; sourceTree = "<group>"; };
 		F108FA6146EDC88EAAE52ACD /* Pods-GithubStargazersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStargazersTests.release.xcconfig"; path = "Target Support Files/Pods-GithubStargazersTests/Pods-GithubStargazersTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2FA069599FBD58F87650A7D /* train_sections_broken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = train_sections_broken.json; sourceTree = "<group>"; };
+		F8952B49265EA0EA0048FCA9 /* testApplication.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplication.1.png; sourceTree = "<group>"; };
+		F8952B4D265EA1440048FCA9 /* testApplication.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplication.2.png; sourceTree = "<group>"; };
+		F8952B4E265EA1440048FCA9 /* testApplication.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplication.3.png; sourceTree = "<group>"; };
+		F8952B4F265EA1440048FCA9 /* testApplication.4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplication.4.png; sourceTree = "<group>"; };
+		F8952B96265EAE150048FCA9 /* testApplicationUI.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testApplicationUI.1.png; sourceTree = "<group>"; };
 		F8AC5E7C265D6C160052A205 /* Environment+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+mock.swift"; sourceTree = "<group>"; };
 		F8C9D001265BD81000D29BAA /* StargazerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerRequest.swift; sourceTree = "<group>"; };
 		F8C9D009265BF28600D29BAA /* StargazersViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersViewTests.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		462409EBD0F4BB35323DC216 /* NetworkingTests */ = {
 			isa = PBXGroup;
 			children = (
+				F8952B47265EA0EA0048FCA9 /* __Snapshots__ */,
 				2A01CE55EC44C436C7E1DF96 /* MockUrlProtocol.swift */,
 				97538587E7E00C77C2620096 /* NetworkingTests.swift */,
 				F8C9D009265BF28600D29BAA /* StargazersViewTests.swift */,
@@ -443,6 +446,26 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F8952B47265EA0EA0048FCA9 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				F8952B48265EA0EA0048FCA9 /* ApplicationTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		F8952B48265EA0EA0048FCA9 /* ApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8952B96265EAE150048FCA9 /* testApplicationUI.1.png */,
+				F8952B4D265EA1440048FCA9 /* testApplication.2.png */,
+				F8952B4E265EA1440048FCA9 /* testApplication.3.png */,
+				F8952B4F265EA1440048FCA9 /* testApplication.4.png */,
+				F8952B49265EA0EA0048FCA9 /* testApplication.1.png */,
+			);
+			path = ApplicationTests;
+			sourceTree = "<group>";
+		};
 		F8C9D0AD265C35EC00D29BAA /* environments */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,7 +490,6 @@
 			isa = PBXGroup;
 			children = (
 				BF798E0C0D51D3B84B82AE45 /* BaseViewController.swift */,
-				8C15C0BEBF97338D094F837C /* CollectionViewDelegate.swift */,
 				D4432E8D28EE9A7A1EAF4BED /* Mock+.swift */,
 				80665B7E76F57884A40C54F5 /* Utils+Rx.swift */,
 			);
@@ -766,7 +788,6 @@
 				F8952B39265D6F980048FCA9 /* StargazerRequest.swift in Sources */,
 				1DCAEFF1D28E6744A58F2237 /* ArrivalsRequest.swift in Sources */,
 				5AA7AA0247055198203A9B8E /* BaseViewController.swift in Sources */,
-				C31E7B188BFA1AE34513F097 /* CollectionViewDelegate.swift in Sources */,
 				F8AC5E7E265D6C160052A205 /* Environment+mock.swift in Sources */,
 				F9939C68E1B29FFD86BFCC74 /* Application+Environment.swift in Sources */,
 				F969434938574005E1482DDD /* Localizable.swift in Sources */,
@@ -796,7 +817,6 @@
 				86E1B285D503D8E91825B3A4 /* Application+Store.swift in Sources */,
 				9970CE15FD1DBC33A4A094DC /* ArrivalsRequest.swift in Sources */,
 				C5903DC025D1BF9BFAA5FCC4 /* BaseViewController.swift in Sources */,
-				C2231158C504F2A7A289F1AC /* CollectionViewDelegate.swift in Sources */,
 				632CAD3E816D64AC3697B6A5 /* Application+Environment.swift in Sources */,
 				FB333780396419D8C1FBA687 /* Localizable.swift in Sources */,
 				912B9478080E66C3E0FF5902 /* Mock+.swift in Sources */,

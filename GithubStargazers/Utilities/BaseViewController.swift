@@ -7,30 +7,6 @@
 
 import UIKit
 
-public class BaseViewController: UIViewController {
-	
-	override public func viewDidLoad() {
-		super.viewDidLoad()
-		
-		// Do any additional setup after loading the view.
-	}
-	
-	// MARK: - Init
-	
-	public init() {
-		super.init(nibName: nil, bundle: nil)
-	}
-	
-	public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
-}
-
 extension UIViewController {
 	public func registerTableViewCell(with tableView: UITableView, cell: UITableViewCell.Type, reuseIdentifier: String) {
 		tableView.register(

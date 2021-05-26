@@ -12,6 +12,8 @@ import RxComposableArchitecture
 import RxSwift
 import RxCocoa
 import RxComposableArchitectureTests
+import SnapshotTesting
+import SceneBuilder
 
 class ApplicationTests: XCTestCase {
 	
@@ -23,8 +25,35 @@ class ApplicationTests: XCTestCase {
 		// Put teardown code here. This method is called after the invocation of each test method in the class.
 	}
 	
+	func testApplicationUI() {
+		let initialAppState = AppState(
+			starGazers: .sample
+		)
+		
+		let applicationStore: Store<AppState, AppAction> =
+		  Store(
+			initialValue: initialAppState,
+			reducer: with(
+			  appReducer,
+			  compose(
+				customLogging,
+				activityFeed
+			)),
+			environment: AppEnvironment.live
+		)
+		
+		let rootScene = Scene<StargazersListViewController>().render()
+		
+		rootScene.store = applicationStore.view(
+			value: { $0.starGazersFeature },
+			action: { .stargazer($0) }
+		)
+		
+		assertSnapshot(matching: rootScene, as: .image, record: false)
+	}
+	
 	func testApplication() throws {
-		let mock = StargazerViewEnvironment(
+		let mock_env = StargazerViewEnvironment(
 			stargazersEnv:
 				StargazersEnvironment(
 					fetch: { _, _, _ in
@@ -35,10 +64,18 @@ class ApplicationTests: XCTestCase {
 				)
 		)
 		
+//		let root = Scene<StargazersListViewController>().render()
+//
+//		let store = Store<StargazerViewState, StargazerViewAction>(
+//			initialValue: StargazerViewState.sample,
+//			reducer: stargazerViewReducer,
+//			environment: mock_env
+//		)
+		
 		assert(
 			initialValue: AppState(starGazers: StargazerViewState.empty),
 			reducer: appReducer,
-			environment: AppEnvironment(stargazersEnv: mock),
+			environment: AppEnvironment(stargazersEnv: mock_env),
 			steps: Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.owner("octocat"))), { state in
 				state.starGazers.owner = "octocat"
 			}), Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.repo("hello-world"))), { state in

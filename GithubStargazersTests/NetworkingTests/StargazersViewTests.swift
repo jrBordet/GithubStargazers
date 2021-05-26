@@ -12,6 +12,7 @@ import RxComposableArchitecture
 import RxSwift
 import RxCocoa
 import RxComposableArchitectureTests
+import SnapshotTesting
 
 class StargazersViewTests: XCTestCase {
 	let env_empty = StargazerViewEnvironment(
@@ -40,14 +41,23 @@ class StargazersViewTests: XCTestCase {
 		)
 	)
 	
+	let env_not_found = StargazerViewEnvironment(
+		stargazersEnv: StargazersEnvironment(
+			fetch: { _, _, _ in
+				.just([
+					.notFound
+				])
+			}
+		)
+	)
+	
 	override func setUp() {
 	}
 	
 	override func tearDown() {
-		// Put teardown code here. This method is called after the invocation of each test method in the class.
 	}
 	
-	func testStargazersFetchOwnerRepo() {
+	func testStargazersFetch_owner_repo() {
 		assert(
 			initialValue: .empty,
 			reducer: stargazerViewReducer,
@@ -88,6 +98,54 @@ class StargazersViewTests: XCTestCase {
 			environment: env_empty,
 			steps: Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
 				state.isLoading = true
+				state.list = []
+			})
+		)
+	}
+	
+	func testStargazersFetch_empty_owner_empty() {
+		let initialValue = StargazerViewState(
+			list: [],
+			   repo: "some",
+			   owner: "",
+			   isLoading: false,
+			   alert: "",
+			   currentPage: 0
+		   )
+		
+		assert(
+			initialValue: initialValue,
+			reducer: stargazerViewReducer,
+			environment: env_empty,
+			steps: Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
+				state.isLoading = true
+				state.list = []
+			})
+		)
+	}
+	
+	func testStargazersFetch_not_found() {
+		let initialValue = StargazerViewState(
+			list: [],
+			   repo: "some",
+			   owner: "bob",
+			   isLoading: false,
+			   alert: "",
+			   currentPage: 0
+		   )
+		
+		assert(
+			initialValue: initialValue,
+			reducer: stargazerViewReducer,
+			environment: env_not_found,
+			steps: Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
+				state.isLoading = true
+			}), Step(.receive, StargazerViewAction.stargazer(StargazersAction.fetchResponse([.notFound])), { state in
+				state.isLoading = false
+				state.currentPage = 0
+				state.list = []
+				
+				state.alert = "not found"
 			})
 		)
 	}

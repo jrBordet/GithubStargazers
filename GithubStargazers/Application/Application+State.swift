@@ -28,8 +28,5 @@ extension AppState {
 }
 
 let initialAppState = AppState(
-	starGazers: .sample
+	starGazers: .empty
 )
-
-// empty
-// sample

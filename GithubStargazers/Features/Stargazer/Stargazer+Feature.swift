@@ -18,6 +18,8 @@ public func stargazerReducer(
 		state.isLoading = true
 		
 		guard state.owner.isEmpty == false && state.repo.isEmpty == false else {
+			state.list = []
+			
 			return []
 		}
 		
@@ -29,6 +31,13 @@ public func stargazerReducer(
 
 		guard result.isEmpty == false else {
 			return []
+		}
+		
+		if result == [.notFound] {
+			state.alert = "not found"
+			return []
+		} else {
+			state.alert = nil
 		}
 		
 		state.list.append(contentsOf: result)
@@ -54,9 +63,14 @@ public struct StargazersModel {
 extension StargazersModel: Equatable { }
 
 extension StargazersModel {
+	static var notFound = Self(
+		name: "not-found",
+		imageUrl: nil
+	)
+	
 	static var empty = Self(
 		name: "",
-		imageUrl: URL(string: "https://avatars.githubusercontent.com/u/557010?v=4")!
+		imageUrl: nil
 	)
 	
 	static var sample = Self(
