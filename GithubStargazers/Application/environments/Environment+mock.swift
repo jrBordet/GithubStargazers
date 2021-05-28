@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MAK - App
 
 extension AppEnvironment {
 	static var mock = Self(
@@ -14,26 +15,40 @@ extension AppEnvironment {
 	)
 }
 
+// MARK: - View (features composition)
+
 extension StargazerViewEnvironment {
 	static var mock = Self(
 		stargazersEnv: StargazersEnvironment.mock
 	)
 }
 
+// MARK: - Single feature
+
 extension StargazersEnvironment {
 	static var mock = Self(
 		fetch: { _, _, page in
 			print("[StargazersEnvironment] mock \(page)")
 			
-			
-			return .just([.notFound])
+			func map(_ model: StargazerRequestModel) -> StargazersModel {
+				StargazersModel(
+					name: model.login,
+					imageUrl: URL(string: model.avatar_url)
+				)
+			}
 			
 			if page == 1 {
-				return .just(page_1_mock())
+				return .just(
+					Page().mock(from: page_1).map { map($0) }
+				)
 			} else if page == 2 {
-				return .just(page_2_mock())
+				return .just(
+					Page().mock(from: page_2).map { map($0) }
+				)
 			} else if page == 3 {
-				return .just(page_3_mock())
+				return .just(
+					Page().mock(from: page_3).map { map($0) }
+				)
 			} else {
 				return .just([])
 			}
@@ -42,52 +57,24 @@ extension StargazersEnvironment {
 	)
 }
 
-func page_1_mock() -> [StargazersModel] {
-	do {
-		let models = try JSONDecoder().decode([StargazerRequestModel].self, from: page_1.data(using: .utf8)!)
-		return models.map { (m: StargazerRequestModel) -> StargazersModel in
-				let model = StargazersModel(
-					name: m.login,
-					imageUrl: URL(string: m.avatar_url)
-				)
-				
-				return model
-			}
-	} catch {
-		return []
-	}
+struct Page: Mockable {
+	typealias Model = [StargazerRequestModel]
 }
 
-func page_2_mock() -> [StargazersModel] {
-	do {
-		let models = try JSONDecoder().decode([StargazerRequestModel].self, from: page_2.data(using: .utf8)!)
-		return models.map { (m: StargazerRequestModel) -> StargazersModel in
-				let model = StargazersModel(
-					name: m.login,
-					imageUrl: URL(string: m.avatar_url)
-				)
-				
-				return model
-			}
-	} catch {
-		return []
-	}
+protocol Mockable {
+	associatedtype Model: Codable
 }
 
-func page_3_mock() -> [StargazersModel] {
-	do {
-		let models = try JSONDecoder().decode([StargazerRequestModel].self, from: page_3.data(using: .utf8)!)
-		return models.map { (m: StargazerRequestModel) -> StargazersModel in
-				let model = StargazersModel(
-					name: m.login,
-					imageUrl: URL(string: m.avatar_url)
-				)
-				
-				return model
-			}
-	} catch {
-		return []
+extension Mockable {
+	func mock(from content: String) -> Model {
+		do {
+			return try JSONDecoder().decode(Model.self, from: content.data(using: .utf8)!)
+		} catch {
+			fatalError()
+		}
+		
 	}
+	
 }
 
 let page_1 = """

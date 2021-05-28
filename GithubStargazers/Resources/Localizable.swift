@@ -14,6 +14,18 @@ internal enum L10n {
   internal enum App {
     /// GithubStargazers
     internal static let name = L10n.tr("Localizable", "app.name")
+    internal enum Search {
+      /// owner
+      internal static let owner = L10n.tr("Localizable", "app.search.owner")
+      /// repo
+      internal static let repo = L10n.tr("Localizable", "app.search.repo")
+      internal enum Button {
+        /// cancel
+        internal static let cancel = L10n.tr("Localizable", "app.search.button.cancel")
+        /// search
+        internal static let search = L10n.tr("Localizable", "app.search.button.search")
+      }
+    }
     internal enum Stargazers {
       /// not found
       internal static let notfound = L10n.tr("Localizable", "app.stargazers.notfound")

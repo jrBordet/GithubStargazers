@@ -16,12 +16,10 @@ public func searchReducer(
 	switch action {
 	case let .owner(v):
 		state.owner = v
-		//state.list = []
 		
 		return []
 	case let .repo(v):
 		state.repo = v
-		//state.list = []
 		
 		return []
 	}

@@ -8,7 +8,6 @@
 
 import Foundation
 import RxComposableArchitecture
-import os.log
 
 public struct AppState {
 	var starGazers: StargazerViewState

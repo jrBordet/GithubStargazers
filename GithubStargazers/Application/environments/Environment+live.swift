@@ -9,17 +9,31 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MAK - App
+
 extension AppEnvironment {
 	static var live = Self(
 		stargazersEnv: StargazerViewEnvironment.live
 	)
+	
+	static var sample = Self(
+		stargazersEnv: StargazerViewEnvironment.sample
+	)
 }
+
+// MARK: - View (features composition)
 
 extension StargazerViewEnvironment {
 	static var live = Self(
 		stargazersEnv: StargazersEnvironment.live
 	)
+	
+	static var sample = Self(
+		stargazersEnv: StargazersEnvironment.sample
+	)
 }
+
+// MARK: - Single feature
 
 extension StargazersEnvironment {
 	static var live = Self(
@@ -49,18 +63,26 @@ extension StargazersEnvironment {
 					
 					switch error {
 					case let .code(value):
-						switch value {
-						case .NotFound:
+						if case .NotFound = value {
 							return .just([
 								.notFound
 							])
-						default:
-							return .just([])
 						}
+						
+						return .just([])s
 					default:
 						return .just([])
 					}
 				}
+		}
+	)
+	
+	static var sample = Self(
+		fetch: { _, _, _ in
+			.just([
+				StargazersModel.sample,
+				.sample_1
+			])
 		}
 	)
 }

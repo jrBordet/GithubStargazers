@@ -19,6 +19,7 @@ public func stargazerReducer(
 		
 		guard state.owner.isEmpty == false && state.repo.isEmpty == false else {
 			state.list = []
+			state.isLoading = false
 			
 			return []
 		}

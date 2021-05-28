@@ -25,33 +25,6 @@ class ApplicationTests: XCTestCase {
 		// Put teardown code here. This method is called after the invocation of each test method in the class.
 	}
 	
-	func testApplicationUI() {
-		let initialAppState = AppState(
-			starGazers: .sample
-		)
-		
-		let applicationStore: Store<AppState, AppAction> =
-		  Store(
-			initialValue: initialAppState,
-			reducer: with(
-			  appReducer,
-			  compose(
-				customLogging,
-				activityFeed
-			)),
-			environment: AppEnvironment.live
-		)
-		
-		let rootScene = Scene<StargazersListViewController>().render()
-		
-		rootScene.store = applicationStore.view(
-			value: { $0.starGazersFeature },
-			action: { .stargazer($0) }
-		)
-		
-		assertSnapshot(matching: rootScene, as: .image, record: false)
-	}
-	
 	func testApplication() throws {
 		let mock_env = StargazerViewEnvironment(
 			stargazersEnv:
@@ -64,25 +37,21 @@ class ApplicationTests: XCTestCase {
 				)
 		)
 		
-//		let root = Scene<StargazersListViewController>().render()
-//
-//		let store = Store<StargazerViewState, StargazerViewAction>(
-//			initialValue: StargazerViewState.sample,
-//			reducer: stargazerViewReducer,
-//			environment: mock_env
-//		)
-		
 		assert(
 			initialValue: AppState(starGazers: StargazerViewState.empty),
 			reducer: appReducer,
 			environment: AppEnvironment(stargazersEnv: mock_env),
-			steps: Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.owner("octocat"))), { state in
+			steps: Step(.send, AppAction.stargazer(StargazerViewAction.search(SearchAction.owner("octocat"))), { state in
 				state.starGazers.owner = "octocat"
-			}), Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.repo("hello-world"))), { state in
+			}),
+			
+			Step(.send, AppAction.stargazer(StargazerViewAction.search(SearchAction.repo("hello-world"))), { state in
 				state.starGazers.repo = "hello-world"
-			}),	Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.fetch)), { state in
+			}),
+			Step(.send, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.fetch)), { state in
 				state.starGazers.isLoading = true
-			}), Step(.receive, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.fetchResponse([StargazersModel.sample]))), { state in
+			}),
+			Step(.receive, AppAction.stargazer(StargazerViewAction.stargazer(StargazersAction.fetchResponse([StargazersModel.sample]))), { state in
 				state.starGazers.isLoading = false
 				
 				state.starGazers.currentPage = 2
@@ -92,6 +61,7 @@ class ApplicationTests: XCTestCase {
 				]
 			})
 		)
+		
 	}
 	
 }

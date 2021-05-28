@@ -90,6 +90,18 @@ extension StargazerViewState {
 		currentPage: 1
 	)
 	
+	static var sample_1 = Self(
+		list: [
+			StargazersModel.sample,
+			StargazersModel.sample_1
+		],
+		repo: "octocat",
+		owner: "hello-world",
+		isLoading: false,
+		alert: nil,
+		currentPage: 1
+	)
+	
 	static var test = Self(
 		list: [
 			StargazersModel.sample,

@@ -26,10 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //			fatalError()
 //		}
 		
-		#if MOCK
-			print("[MOCK]")
-		#endif
-		
 		let rootScene = Scene<StargazersListViewController>().render()
 		
 		rootScene.store = applicationStore.view(

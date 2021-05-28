@@ -21,11 +21,7 @@ extension APIRequest {
 		with urlSession: URLSession = .shared,
 		parse: ((String) -> Self.Response)? = nil
 	) -> Observable<Self.Response> {
-		return Observable<Self.Response>.create { observer -> Disposable in
-			
-//			observer.onError(APIError.code(HTTPStatusCodes.NotFound))
-//			return Disposables.create()
-			
+		Observable<Self.Response>.create { observer -> Disposable in
 			os_log("execute %{public}@ ", log: OSLog.networking, type: .info, ["request", request.debugDescription.removingPercentEncoding])
 			
 			guard let request = self.request else {

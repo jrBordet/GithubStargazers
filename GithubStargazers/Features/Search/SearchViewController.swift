@@ -26,11 +26,32 @@ extension Reactive where Base: Store<SearchState, SearchAction> {
 }
 
 class SearchViewController: UIViewController {
-	@IBOutlet var confirmButton: UIButton!
-	@IBOutlet var purgeButton: UIButton!
+	@IBOutlet var confirmButton: UIButton! {
+		didSet {
+			confirmButton.layer.cornerRadius = 5
+			
+			confirmButton.backgroundColor = UIColor.systemBlue
+			confirmButton.setTitleColor(.white, for: .normal)
+			
+			confirmButton.setTitle(L10n.App.Search.Button.search, for: .normal)
+		}
+	}
+	@IBOutlet var cancelButton: UIButton! {
+		didSet {
+			cancelButton.setTitle(L10n.App.Search.Button.cancel, for: .normal)
+		}
+	}
 	
-	@IBOutlet var ownerField: UITextField!
-	@IBOutlet var repoField: UITextField!
+	@IBOutlet var ownerField: UITextField! {
+		didSet {
+			ownerField.placeholder = L10n.App.Search.owner
+		}
+	}
+	@IBOutlet var repoField: UITextField! {
+		didSet {
+			repoField.placeholder = L10n.App.Search.repo
+		}
+	}
 	
 	// MARK: Store
 	
@@ -44,13 +65,13 @@ class SearchViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		self.title = "Search"
-		
+				
 		guard let store = self.store else {
 			return
 		}
 		
+		// MARK: - searchs 
+			
 		confirmButton.rx
 			.tap
 			.bind { [weak self] in
@@ -61,22 +82,27 @@ class SearchViewController: UIViewController {
 				self?.dismiss(animated: true, completion: nil)
 			}.disposed(by: disposeBag)
 		
+		// MARK: - cancel
+		
+		cancelButton.rx
+			.tap
+			.bind { [weak self] in
+				self?.dismiss(animated: true, completion: nil)
+			}.disposed(by: disposeBag)
+		
+		// MARK: - owner
+		
 		store.value
 			.map { $0.owner }
 			.bind(to: self.ownerField.rx.text)
 			.disposed(by: disposeBag)
 		
+		// MARK: - repo
+		
 		store.value
 			.map { $0.repo }
 			.bind(to: self.repoField.rx.text)
 			.disposed(by: disposeBag)
-		
-		purgeButton.rx
-			.tap
-			.bind {
-				store.send(SearchAction.owner(""))
-				store.send(SearchAction.repo(""))
-			}.disposed(by: disposeBag)
 		
 		// MARK: - owner
 		

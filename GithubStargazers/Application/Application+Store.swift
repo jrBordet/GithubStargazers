@@ -8,6 +8,7 @@
 import Foundation
 import RxComposableArchitecture
 import SwiftPrettyPrint
+import os.log
 
 #if MOCK
 var applicationStore: Store<AppState, AppAction> =

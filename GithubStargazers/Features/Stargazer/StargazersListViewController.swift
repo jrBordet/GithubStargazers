@@ -56,6 +56,7 @@ class StargazersListViewController: UIViewController {
 	@IBOutlet var ownerField: UITextField!
 	@IBOutlet var repoField: UITextField!
 	@IBOutlet var notFoundLabel: UILabel!
+	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	
 	// MARK: Store
 	
@@ -85,13 +86,6 @@ class StargazersListViewController: UIViewController {
 	@objc func searchTapped() {
 		let searchScene = Scene<SearchViewController>().render()
 		
-		/**
-		rootScene.store = applicationStore.view(
-			value: { $0.starGazersFeature },
-			action: { .stargazer($0) }
-		
-		*/
-		
 		searchScene.store = self.store?.view(
 			value: { $0.search },
 			action: { .search($0) }
@@ -100,16 +94,12 @@ class StargazersListViewController: UIViewController {
 		searchScene.closeClosure = { [weak self] in
 			self?.store?.send(StargazerViewAction.stargazer(StargazersAction.purge))
 
-			self?.store?.send(StargazerViewAction.stargazer(StargazersAction.fetch))
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.28, execute: {
+				self?.store?.send(StargazerViewAction.stargazer(StargazersAction.fetch))
+			})
 		}
 		
 		self.navigationController?.present(searchScene, animated: true, completion: nil)
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-				
-//		self.store?.send(StargazerViewAction.stargazer(StargazersAction.fetch))
 	}
 	
 	override func viewDidLoad() {
@@ -155,11 +145,18 @@ class StargazersListViewController: UIViewController {
 			.bind(to: store.rx.repo)
 			.disposed(by: disposeBag)
 		
+		// MARK: - loading
+		
+		store.value
+			.map { $0.isLoading }
+			.bind(to: self.activityIndicator.rx.isAnimating)
+			.disposed(by: disposeBag)
+		
 		// MARK: - Load next page when table is near the bottom
 		
 		tableView.rx
 			.contentOffset
-			.skip(3) // TODO: - check this
+			.skip(3)
 			.distinctUntilChanged()
 			.map { (offset: CGPoint) -> Bool in
 				StargazersListViewController.isNearTheBottomEdge(contentOffset: offset, self.tableView)
@@ -196,6 +193,10 @@ class StargazersListViewController: UIViewController {
 		// MARK: - Bind dataSource
 		
 		setupDataSource()
+		
+		store.value
+			.subscribe()
+			.disposed(by: disposeBag)
 		
 		store
 			.value

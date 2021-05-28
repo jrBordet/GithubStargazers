@@ -22,19 +22,4 @@ extension UIViewController {
 			forCellReuseIdentifier: reuseIdentifier
 		)
 	}
-	
-	public func register(with collectionView: UICollectionView, cell: UICollectionViewCell.Type, identifier: String) {
-		collectionView.register(
-			cell.self,
-			forCellWithReuseIdentifier: identifier
-		)
-		
-		collectionView.register(
-			UINib(
-				nibName: identifier,
-				bundle: Bundle(for: type(of: self))
-			),
-			forCellWithReuseIdentifier: identifier
-		)
-	}
 }

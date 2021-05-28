@@ -57,6 +57,19 @@ class StargazersViewTests: XCTestCase {
 	override func tearDown() {
 	}
 	
+	func testStarGazers_purge() {
+		assert(
+			initialValue: .sample,
+			reducer: stargazerViewReducer,
+			environment: env_filled,
+			steps: Step(.send, StargazerViewAction.stargazer(.purge), { state in
+				state.list = []
+				state.currentPage = 1
+				state.alert = nil
+			})
+		)
+	}
+	
 	func testStargazersSearch_owner_repo() {
 		assert(
 			initialValue: .empty,
@@ -131,7 +144,7 @@ class StargazersViewTests: XCTestCase {
 			reducer: stargazerViewReducer,
 			environment: env_empty,
 			steps: Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
-				state.isLoading = true
+				state.isLoading = false
 				state.list = []
 			})
 		)
@@ -140,19 +153,19 @@ class StargazersViewTests: XCTestCase {
 	func testStargazersFetch_empty_owner_empty() {
 		let initialValue = StargazerViewState(
 			list: [],
-			   repo: "some",
-			   owner: "",
-			   isLoading: false,
-			   alert: "",
-			   currentPage: 0
-		   )
+			repo: "some",
+			owner: "",
+			isLoading: false,
+			alert: "",
+			currentPage: 0
+		)
 		
 		assert(
 			initialValue: initialValue,
 			reducer: stargazerViewReducer,
 			environment: env_empty,
 			steps: Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
-				state.isLoading = true
+				state.isLoading = false
 				state.list = []
 			})
 		)
@@ -161,12 +174,12 @@ class StargazersViewTests: XCTestCase {
 	func testStargazersFetch_not_found() {
 		let initialValue = StargazerViewState(
 			list: [],
-			   repo: "some",
-			   owner: "bob",
-			   isLoading: false,
-			   alert: "",
-			   currentPage: 0
-		   )
+			repo: "some",
+			owner: "bob",
+			isLoading: false,
+			alert: "",
+			currentPage: 0
+		)
 		
 		assert(
 			initialValue: initialValue,

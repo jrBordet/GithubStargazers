@@ -13,7 +13,6 @@ func activityFeed(
 	_ reducer: @escaping Reducer<AppState, AppAction, AppEnvironment>
 ) -> Reducer<AppState, AppAction, AppEnvironment> {
 	return { state, action, environment in
-		
 
 		print("[APPLICATION][action]\(action)")
 		print("[APPLICATION][state]\(state)")
@@ -36,11 +35,8 @@ func activityFeed(
 
 extension OSLog {
 	private static var subsystem = Bundle.main.bundleIdentifier!
-	
-	static let board = OSLog(subsystem: subsystem, category: "Stations board")
-	
-	static let counter = OSLog(subsystem: subsystem, category: "Counter")
-	static let login = OSLog(subsystem: subsystem, category: "Login")
-	
+		
 	static let activityFeed = OSLog(subsystem: subsystem, category: "activityFeed")
+	
+	static let fetch = OSLog(subsystem: subsystem, category: "fetch")
 }

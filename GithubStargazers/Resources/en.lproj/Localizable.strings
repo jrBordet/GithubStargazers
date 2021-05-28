@@ -12,35 +12,9 @@
 
 "app.stargazers.notfound" = "not found";
 
-//"app.common.save" = "Save";
-//"app.common.dismiss" = "Dismiss";
-//"app.common.arrivals" = "Arrivals";
-//"app.common.departures" = "Departures";
-//"app.common.board" = "Board";
-//"app.common.x" = "X";
-//
-//// MARK: - Home
-//
-//"app.home.plus" = "+";
-//"app.home.addStations" = "Search stations";
-//"app.home.disclaimer" = "No stations on your favourites";
-//
-//// MARK: - Trains
-//
-//"trains.title"= "My trains";
-//
-//// MARK: - Stations
-//
-//"stations.title" = "Stations";
-//"stations.searchbar" = "Search...";
-//"stations.header.favourites" = "My stations";
-//"stations.header.results" = "Results";
-//
-//// MARK: - Sections
-//
-//"sections.empty" = "No results";
-//
-//// MARK: - Trend
-//
-//"trend.follow" = "Follow";
-//"trend.follow.stop" = "Stop follow";
+// MARK: - Search
+
+"app.search.owner" = "owner";
+"app.search.repo" = "repo";
+"app.search.button.search" = "search";
+"app.search.button.cancel" = "cancel";

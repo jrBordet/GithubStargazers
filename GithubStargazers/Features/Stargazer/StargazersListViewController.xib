@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StargazersListViewController" customModule="GithubStargazers" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="lcz-2O-CSP" id="K2s-hp-han"/>
                 <outlet property="notFoundLabel" destination="Zeq-t4-6B4" id="1aH-Vq-zgo"/>
                 <outlet property="ownerField" destination="kFG-6N-lsv" id="l7R-QI-wNC"/>
                 <outlet property="repoField" destination="JwK-YW-d5p" id="OAX-CE-7VQ"/>
@@ -54,10 +55,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lcz-2O-CSP">
+                    <rect key="frame" x="197" y="443" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="lcz-2O-CSP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="By5-qz-LSo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RQo-xn-ea4" secondAttribute="trailing" id="DjC-qN-qfA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RQo-xn-ea4" secondAttribute="bottom" id="KY9-rg-mO3"/>
                 <constraint firstItem="u2D-KX-2OL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-15" id="Mip-J8-pDy"/>
@@ -68,6 +73,7 @@
                 <constraint firstItem="u2D-KX-2OL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="hbU-Ya-d6g"/>
                 <constraint firstItem="RQo-xn-ea4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kl5-nJ-F4N"/>
                 <constraint firstItem="u2D-KX-2OL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lEo-3s-AGT"/>
+                <constraint firstItem="lcz-2O-CSP" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="olW-GN-rcV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zeq-t4-6B4" secondAttribute="trailing" constant="8" id="z9p-1u-d9Y"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
