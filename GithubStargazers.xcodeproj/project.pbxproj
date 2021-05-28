@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		13087C5D7A993322B468334B /* train_sections_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = F2FA069599FBD58F87650A7D /* train_sections_broken.json */; };
-		17A1E9BD45CD7D8D6326559D /* Utils+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568A65D9BBD4031F282AA143 /* Utils+.swift */; };
 		1A00AE7BBCB202CC97117429 /* train_sections_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = F2FA069599FBD58F87650A7D /* train_sections_broken.json */; };
 		1AA101A2218A8D5D318F582B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437F0942F5607772BC8CA97 /* APIRequest.swift */; };
-		1DCAEFF1D28E6744A58F2237 /* ArrivalsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790FEC641D81286CADAAA41 /* ArrivalsRequest.swift */; };
 		205D933185664664D3810BB3 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01CE55EC44C436C7E1DF96 /* MockUrlProtocol.swift */; };
-		274162A31B9AE4171163C54A /* ApplicationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE694FF9335A09C34E984DE9 /* ApplicationAction.swift */; };
+		274162A31B9AE4171163C54A /* Application+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE694FF9335A09C34E984DE9 /* Application+Action.swift */; };
 		2792EF997EB348E17A014CFB /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CF1093E08AF841E8EAA13F /* Networking.swift */; };
 		2B6D73CAFB58DBA13604953E /* trend_torino_p_nuova_reggio_calabria.json in Resources */ = {isa = PBXBuildFile; fileRef = C3E0795B3BB71B6A4B64B109 /* trend_torino_p_nuova_reggio_calabria.json */; };
 		3825104926B703FF49BF24FF /* train_sections.json in Resources */ = {isa = PBXBuildFile; fileRef = 502EE77BB7B0E038C99316DA /* train_sections.json */; };
@@ -23,7 +21,7 @@
 		467DB0A7AFB111807E73D993 /* Pods_GithubStargazers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3E9879CBB8F06767FEBD52 /* Pods_GithubStargazers.framework */; };
 		4787E1E706154BED4773EA08 /* train_sections.json in Resources */ = {isa = PBXBuildFile; fileRef = 502EE77BB7B0E038C99316DA /* train_sections.json */; };
 		4AD735DF1C1ABB69FD894BD0 /* arrivals_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = B761514C6EDE488B2FA055CB /* arrivals_broken.json */; };
-		4B76A345808841CC085D391A /* ApplicationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA2417CAC665BB82B8A480 /* ApplicationReducer.swift */; };
+		4B76A345808841CC085D391A /* Application+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA2417CAC665BB82B8A480 /* Application+Reducer.swift */; };
 		502029844005DA5D975DA4FB /* Mock+resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FDDE8161E1D88FF3E77E5 /* Mock+resources.swift */; };
 		509AFBA8BFCB03A1C4F9D6E7 /* arrivals.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1821A4B1D606DB2D95A604 /* arrivals.json */; };
 		54505B5D722BAE91FC92A9BE /* URLRequests+HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD857FCF53053A09EAD23E4A /* URLRequests+HTTPStatusCodes.swift */; };
@@ -31,22 +29,20 @@
 		5B36394C7F328322CCF1B0CA /* departures_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E83B1296DAC6017CB3ED7E /* departures_broken.json */; };
 		5C8CAB374A842DB9C4B89403 /* rate.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7A762A9668685C7A8C68F60F /* rate.csv */; };
 		5CC9FBFD4C4E3EAA271FBCC8 /* departures_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E83B1296DAC6017CB3ED7E /* departures_broken.json */; };
-		632CAD3E816D64AC3697B6A5 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239010BE486EA21FED72AA30 /* Environment.swift */; };
+		632CAD3E816D64AC3697B6A5 /* Application+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239010BE486EA21FED72AA30 /* Application+Environment.swift */; };
 		67467C21F5AD9738E8B33C74 /* trend.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBCF54DDC938F09D377EB8E /* trend.json */; };
 		6807E1F366924326E1D3442F /* Pods_GithubStargazersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDBA30D1E615EF292DE74F3 /* Pods_GithubStargazersTests.framework */; };
 		696FB709EE318765CC7A84F2 /* stations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 21FAAB4FEFA632D15D529FD6 /* stations.txt */; };
-		775877964759A2A7C56DAA79 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1F294862C5AFB4F994831 /* ApplicationState.swift */; };
+		775877964759A2A7C56DAA79 /* Application+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1F294862C5AFB4F994831 /* Application+State.swift */; };
 		7A11F89C94F093163C985A7D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437F0942F5607772BC8CA97 /* APIRequest.swift */; };
 		7B249B8A77D7E31EE28E15B0 /* departures.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C873F7E18E642E7E7D0A619 /* departures.json */; };
 		7E7EEA548771E71AE9D5826C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C3BAEEA3031A9EFE658B755 /* Localizable.strings */; };
-		86E1B285D503D8E91825B3A4 /* ApplicationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4471467947D85C1076870F /* ApplicationStore.swift */; };
+		86E1B285D503D8E91825B3A4 /* Application+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4471467947D85C1076870F /* Application+Store.swift */; };
 		883A731DE32320FA1A7C5FB4 /* stations_broken.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07DC6376CF9244B71642B551 /* stations_broken.txt */; };
 		8E3268020C5B8468ED65E450 /* trend.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBCF54DDC938F09D377EB8E /* trend.json */; };
 		8F5AC2E32B9B33FB3E6A6572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECB27D32C0F8B2D654C4426 /* Assets.xcassets */; };
-		912B9478080E66C3E0FF5902 /* Mock+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4432E8D28EE9A7A1EAF4BED /* Mock+.swift */; };
 		92FF4E3F103B0C6FF37A5399 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C3BAEEA3031A9EFE658B755 /* Localizable.strings */; };
 		97310B7254CFB66DE302FA76 /* URLRequests+HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD857FCF53053A09EAD23E4A /* URLRequests+HTTPStatusCodes.swift */; };
-		9970CE15FD1DBC33A4A094DC /* ArrivalsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790FEC641D81286CADAAA41 /* ArrivalsRequest.swift */; };
 		9EEB254803DB1E2B6935F901 /* installations.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5ADFCA4462F78FEE23DA7036 /* installations.csv */; };
 		9F12522E916496A95000EE50 /* Difference+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0F3710EB7BFD723701E3D /* Difference+.swift */; };
 		A384600C1F7650DB931150FC /* trend_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C351BA033DD139B1FCDD5B4 /* trend_broken.json */; };
@@ -54,34 +50,54 @@
 		AF772A4C9D9FF310FA4BD9D5 /* trend_milano_centrale.json in Resources */ = {isa = PBXBuildFile; fileRef = 168D1B8388FBDB234C209B04 /* trend_milano_centrale.json */; };
 		B1ACE0BD402D28E34A823433 /* stations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 21FAAB4FEFA632D15D529FD6 /* stations.txt */; };
 		B53B2EB2C1CFEC178BC8D461 /* arrivals.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1821A4B1D606DB2D95A604 /* arrivals.json */; };
-		B81FBEF01DFC1C30E6614B4E /* ApplicationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE694FF9335A09C34E984DE9 /* ApplicationAction.swift */; };
+		B81FBEF01DFC1C30E6614B4E /* Application+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE694FF9335A09C34E984DE9 /* Application+Action.swift */; };
 		B9615B15FC5CE7D74E04F954 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CF1093E08AF841E8EAA13F /* Networking.swift */; };
 		BE7CB5D44F178BCB88621C41 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF47D88A24F878DCA42AFC /* Rate.swift */; };
 		C08C7E71181A50948F4B8308 /* arrivals_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = B761514C6EDE488B2FA055CB /* arrivals_broken.json */; };
-		C2231158C504F2A7A289F1AC /* CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C15C0BEBF97338D094F837C /* CollectionViewDelegate.swift */; };
 		C280D36298600238E56D4183 /* Utils+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80665B7E76F57884A40C54F5 /* Utils+Rx.swift */; };
-		C31E7B188BFA1AE34513F097 /* CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C15C0BEBF97338D094F837C /* CollectionViewDelegate.swift */; };
 		C4E731E654EF5528B046AA70 /* stations_broken.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07DC6376CF9244B71642B551 /* stations_broken.txt */; };
-		C5151F1D65A1D1FBC1AC31D9 /* Utils+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568A65D9BBD4031F282AA143 /* Utils+.swift */; };
 		C5903DC025D1BF9BFAA5FCC4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF798E0C0D51D3B84B82AE45 /* BaseViewController.swift */; };
 		C594C656A553F8568D762493 /* installations.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5ADFCA4462F78FEE23DA7036 /* installations.csv */; };
-		C65341D822A2BFA937306DA4 /* ApplicationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA2417CAC665BB82B8A480 /* ApplicationReducer.swift */; };
+		C65341D822A2BFA937306DA4 /* Application+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEA2417CAC665BB82B8A480 /* Application+Reducer.swift */; };
 		CA16EDD05E29FF4EBE68581F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29122E7C23E415A48599E01 /* AppDelegate.swift */; };
 		D1693720CBC6644BEABFE0D4 /* Mock+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4432E8D28EE9A7A1EAF4BED /* Mock+.swift */; };
 		D5EE8433AA7F977707A0D335 /* rate.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7A762A9668685C7A8C68F60F /* rate.csv */; };
 		D6EF64EB87D9FE4E91C05DA2 /* departures.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C873F7E18E642E7E7D0A619 /* departures.json */; };
-		D761DD3B6B31D6B9C960ED3C /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1F294862C5AFB4F994831 /* ApplicationState.swift */; };
+		D761DD3B6B31D6B9C960ED3C /* Application+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC1F294862C5AFB4F994831 /* Application+State.swift */; };
 		D9C2F1B709C6E40404F6A22A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29122E7C23E415A48599E01 /* AppDelegate.swift */; };
 		DA3753D60CBC69EE61E25FDF /* Pods_GithubStargazersMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7115A4002D9699800AA0B4 /* Pods_GithubStargazersMock.framework */; };
 		E1508DF5C38D3D1C09A23A76 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97538587E7E00C77C2620096 /* NetworkingTests.swift */; };
 		E9B0AD71011DF2DA14C31222 /* trend_milano_centrale.json in Resources */ = {isa = PBXBuildFile; fileRef = 168D1B8388FBDB234C209B04 /* trend_milano_centrale.json */; };
 		F2399A77CE071B3362843096 /* Application+ActivityFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000924F24E5151A9B4A769F4 /* Application+ActivityFeed.swift */; };
 		F2C1482A58F2B8D2C5F5F79D /* Utils+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80665B7E76F57884A40C54F5 /* Utils+Rx.swift */; };
-		F542603228C51574C40E9254 /* ApplicationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4471467947D85C1076870F /* ApplicationStore.swift */; };
+		F542603228C51574C40E9254 /* Application+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4471467947D85C1076870F /* Application+Store.swift */; };
+		F8952B31265D6F040048FCA9 /* Stargazer+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D052265C2CBF00D29BAA /* Stargazer+View.swift */; };
+		F8952B35265D6F0C0048FCA9 /* Stargazer+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D04D265C2C5500D29BAA /* Stargazer+Feature.swift */; };
+		F8952B39265D6F980048FCA9 /* StargazerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D001265BD81000D29BAA /* StargazerRequest.swift */; };
+		F8952B3D265D6FB60048FCA9 /* Environment+live.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D08A265C34B000D29BAA /* Environment+live.swift */; };
+		F8952BBA265EAEED0048FCA9 /* Search+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */; };
+		F8952BBB265EAEED0048FCA9 /* Search+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */; };
+		F8952BCA265EB14A0048FCA9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BC8265EB14A0048FCA9 /* SearchViewController.swift */; };
+		F8952BCB265EB14A0048FCA9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8952BC8265EB14A0048FCA9 /* SearchViewController.swift */; };
+		F8952BCC265EB14A0048FCA9 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8952BC9265EB14A0048FCA9 /* SearchViewController.xib */; };
+		F8952BCD265EB14A0048FCA9 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8952BC9265EB14A0048FCA9 /* SearchViewController.xib */; };
+		F8AC5E7E265D6C160052A205 /* Environment+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC5E7C265D6C160052A205 /* Environment+mock.swift */; };
 		F8C9D002265BD81000D29BAA /* StargazerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D001265BD81000D29BAA /* StargazerRequest.swift */; };
-		F8C9D00A265BF28600D29BAA /* StargazersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D009265BF28600D29BAA /* StargazersTests.swift */; };
+		F8C9D00A265BF28600D29BAA /* StargazersViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D009265BF28600D29BAA /* StargazersViewTests.swift */; };
+		F8C9D04E265C2C5500D29BAA /* Stargazer+Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D04D265C2C5500D29BAA /* Stargazer+Feature.swift */; };
+		F8C9D053265C2CBF00D29BAA /* Stargazer+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D052265C2CBF00D29BAA /* Stargazer+View.swift */; };
+		F8C9D08B265C34B000D29BAA /* Environment+live.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D08A265C34B000D29BAA /* Environment+live.swift */; };
+		F8C9D0B5265C3A9300D29BAA /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D0B4265C3A9300D29BAA /* ApplicationTests.swift */; };
+		F8C9D100265CD1FA00D29BAA /* StargazersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D0FE265CD1FA00D29BAA /* StargazersListViewController.swift */; };
+		F8C9D101265CD1FA00D29BAA /* StargazersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D0FE265CD1FA00D29BAA /* StargazersListViewController.swift */; };
+		F8C9D102265CD1FA00D29BAA /* StargazersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C9D0FF265CD1FA00D29BAA /* StargazersListViewController.xib */; };
+		F8C9D103265CD1FA00D29BAA /* StargazersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C9D0FF265CD1FA00D29BAA /* StargazersListViewController.xib */; };
+		F8C9D109265CD2BD00D29BAA /* StargazerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D107265CD2BD00D29BAA /* StargazerCell.swift */; };
+		F8C9D10A265CD2BD00D29BAA /* StargazerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9D107265CD2BD00D29BAA /* StargazerCell.swift */; };
+		F8C9D10B265CD2BD00D29BAA /* StargazerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C9D108265CD2BD00D29BAA /* StargazerCell.xib */; };
+		F8C9D10C265CD2BD00D29BAA /* StargazerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C9D108265CD2BD00D29BAA /* StargazerCell.xib */; };
 		F969434938574005E1482DDD /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC230BC4B8CB92A2D6FF88 /* Localizable.swift */; };
-		F9939C68E1B29FFD86BFCC74 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239010BE486EA21FED72AA30 /* Environment.swift */; };
+		F9939C68E1B29FFD86BFCC74 /* Application+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239010BE486EA21FED72AA30 /* Application+Environment.swift */; };
 		FB333780396419D8C1FBA687 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC230BC4B8CB92A2D6FF88 /* Localizable.swift */; };
 		FF8576B7E1512CF574D4B4B1 /* trend_broken.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C351BA033DD139B1FCDD5B4 /* trend_broken.json */; };
 /* End PBXBuildFile section */
@@ -106,16 +122,14 @@
 		12C0F3710EB7BFD723701E3D /* Difference+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Difference+.swift"; sourceTree = "<group>"; };
 		1437F0942F5607772BC8CA97 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		168D1B8388FBDB234C209B04 /* trend_milano_centrale.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trend_milano_centrale.json; sourceTree = "<group>"; };
-		1C4471467947D85C1076870F /* ApplicationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStore.swift; sourceTree = "<group>"; };
+		1C4471467947D85C1076870F /* Application+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Store.swift"; sourceTree = "<group>"; };
 		21FAAB4FEFA632D15D529FD6 /* stations.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stations.txt; sourceTree = "<group>"; };
-		239010BE486EA21FED72AA30 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		239010BE486EA21FED72AA30 /* Application+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Environment.swift"; sourceTree = "<group>"; };
 		2A01CE55EC44C436C7E1DF96 /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
 		39E83B1296DAC6017CB3ED7E /* departures_broken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = departures_broken.json; sourceTree = "<group>"; };
 		3F9D5FB7FFA1054DAD70C2B1 /* Pods-GithubStargazersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStargazersTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubStargazersTests/Pods-GithubStargazersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4EDBA30D1E615EF292DE74F3 /* Pods_GithubStargazersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubStargazersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		502EE77BB7B0E038C99316DA /* train_sections.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = train_sections.json; sourceTree = "<group>"; };
-		568A65D9BBD4031F282AA143 /* Utils+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+.swift"; sourceTree = "<group>"; };
-		5790FEC641D81286CADAAA41 /* ArrivalsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsRequest.swift; sourceTree = "<group>"; };
 		5ADFCA4462F78FEE23DA7036 /* installations.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = installations.csv; sourceTree = "<group>"; };
 		5C873F7E18E642E7E7D0A619 /* departures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = departures.json; sourceTree = "<group>"; };
 		5D4E3D99C3348F33756147DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -130,7 +144,6 @@
 		80665B7E76F57884A40C54F5 /* Utils+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Rx.swift"; sourceTree = "<group>"; };
 		8AD4B5F172FAFF5D1CDFE460 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B7115A4002D9699800AA0B4 /* Pods_GithubStargazersMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubStargazersMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C15C0BEBF97338D094F837C /* CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegate.swift; sourceTree = "<group>"; };
 		931A40254D4411C757B1AFDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		955420E8896799FF56DB8F2E /* Pods-GithubStargazersMock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStargazersMock.debug.xcconfig"; path = "Target Support Files/Pods-GithubStargazersMock/Pods-GithubStargazersMock.debug.xcconfig"; sourceTree = "<group>"; };
 		97538587E7E00C77C2620096 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
@@ -142,18 +155,31 @@
 		C3E0795B3BB71B6A4B64B109 /* trend_torino_p_nuova_reggio_calabria.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trend_torino_p_nuova_reggio_calabria.json; sourceTree = "<group>"; };
 		C7C14D20AF2B3B4444537825 /* GithubStargazers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubStargazers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8486AF6EC9305D3E1431051 /* GithubStargazersTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GithubStargazersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBC1F294862C5AFB4F994831 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
+		CBC1F294862C5AFB4F994831 /* Application+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+State.swift"; sourceTree = "<group>"; };
 		CE1821A4B1D606DB2D95A604 /* arrivals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = arrivals.json; sourceTree = "<group>"; };
 		D4432E8D28EE9A7A1EAF4BED /* Mock+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mock+.swift"; sourceTree = "<group>"; };
 		DC78F3EAC64CA2B6E6A4C585 /* Pods-GithubStargazersMock.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStargazersMock.mock.xcconfig"; path = "Target Support Files/Pods-GithubStargazersMock/Pods-GithubStargazersMock.mock.xcconfig"; sourceTree = "<group>"; };
-		DE694FF9335A09C34E984DE9 /* ApplicationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAction.swift; sourceTree = "<group>"; };
+		DE694FF9335A09C34E984DE9 /* Application+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Action.swift"; sourceTree = "<group>"; };
 		DECB27D32C0F8B2D654C4426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E29122E7C23E415A48599E01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBEA2417CAC665BB82B8A480 /* ApplicationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationReducer.swift; sourceTree = "<group>"; };
+		EBEA2417CAC665BB82B8A480 /* Application+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Reducer.swift"; sourceTree = "<group>"; };
 		F108FA6146EDC88EAAE52ACD /* Pods-GithubStargazersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStargazersTests.release.xcconfig"; path = "Target Support Files/Pods-GithubStargazersTests/Pods-GithubStargazersTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2FA069599FBD58F87650A7D /* train_sections_broken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = train_sections_broken.json; sourceTree = "<group>"; };
+		F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search+Feature.swift"; sourceTree = "<group>"; };
+		F8952BC8265EB14A0048FCA9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F8952BC9265EB14A0048FCA9 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		F8952C0D265FA6950048FCA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8AC5E7C265D6C160052A205 /* Environment+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+mock.swift"; sourceTree = "<group>"; };
 		F8C9D001265BD81000D29BAA /* StargazerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerRequest.swift; sourceTree = "<group>"; };
-		F8C9D009265BF28600D29BAA /* StargazersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersTests.swift; sourceTree = "<group>"; };
+		F8C9D009265BF28600D29BAA /* StargazersViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersViewTests.swift; sourceTree = "<group>"; };
+		F8C9D04D265C2C5500D29BAA /* Stargazer+Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stargazer+Feature.swift"; sourceTree = "<group>"; };
+		F8C9D052265C2CBF00D29BAA /* Stargazer+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stargazer+View.swift"; sourceTree = "<group>"; };
+		F8C9D08A265C34B000D29BAA /* Environment+live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+live.swift"; sourceTree = "<group>"; };
+		F8C9D0B4265C3A9300D29BAA /* ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTests.swift; sourceTree = "<group>"; };
+		F8C9D0FE265CD1FA00D29BAA /* StargazersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersListViewController.swift; sourceTree = "<group>"; };
+		F8C9D0FF265CD1FA00D29BAA /* StargazersListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StargazersListViewController.xib; sourceTree = "<group>"; };
+		F8C9D107265CD2BD00D29BAA /* StargazerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerCell.swift; sourceTree = "<group>"; };
+		F8C9D108265CD2BD00D29BAA /* StargazerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StargazerCell.xib; sourceTree = "<group>"; };
 		FD857FCF53053A09EAD23E4A /* URLRequests+HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequests+HTTPStatusCodes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,7 +214,6 @@
 		1241B8036E1B63EB2AEF9553 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				5790FEC641D81286CADAAA41 /* ArrivalsRequest.swift */,
 				B34A43A388A0F79D4728AE8C /* Models */,
 				F8C9D001265BD81000D29BAA /* StargazerRequest.swift */,
 			);
@@ -228,6 +253,7 @@
 		405DACF2FDA4554FE6934C39 = {
 			isa = PBXGroup;
 			children = (
+				F8952C0D265FA6950048FCA9 /* README.md */,
 				82355097E2849186F028616E /* GithubStargazers */,
 				35341692B046C1DB3453F98A /* GithubStargazersTests */,
 				78D0DAC69444ED9DFCC9763E /* Products */,
@@ -243,7 +269,8 @@
 			children = (
 				2A01CE55EC44C436C7E1DF96 /* MockUrlProtocol.swift */,
 				97538587E7E00C77C2620096 /* NetworkingTests.swift */,
-				F8C9D009265BF28600D29BAA /* StargazersTests.swift */,
+				F8C9D009265BF28600D29BAA /* StargazersViewTests.swift */,
+				F8C9D0B4265C3A9300D29BAA /* ApplicationTests.swift */,
 			);
 			path = NetworkingTests;
 			sourceTree = "<group>";
@@ -302,12 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				E29122E7C23E415A48599E01 /* AppDelegate.swift */,
-				BF798E0C0D51D3B84B82AE45 /* BaseViewController.swift */,
-				8C15C0BEBF97338D094F837C /* CollectionViewDelegate.swift */,
-				D4432E8D28EE9A7A1EAF4BED /* Mock+.swift */,
-				568A65D9BBD4031F282AA143 /* Utils+.swift */,
-				80665B7E76F57884A40C54F5 /* Utils+Rx.swift */,
-				C3EF76BDB427437EDBA4BC24 /* Application+Store */,
+				F8C9D0C0265CCC1D00D29BAA /* Utilities */,
+				C3EF76BDB427437EDBA4BC24 /* Application */,
 				E5538A2D60FACD78167250DD /* Features */,
 				5A16646115E2908FA25306B5 /* Networking */,
 				90012579D285A0C81DB0F172 /* Resources */,
@@ -381,17 +404,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C3EF76BDB427437EDBA4BC24 /* Application+Store */ = {
+		C3EF76BDB427437EDBA4BC24 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				F8C9D0AD265C35EC00D29BAA /* environments */,
+				1C4471467947D85C1076870F /* Application+Store.swift */,
 				000924F24E5151A9B4A769F4 /* Application+ActivityFeed.swift */,
-				DE694FF9335A09C34E984DE9 /* ApplicationAction.swift */,
-				EBEA2417CAC665BB82B8A480 /* ApplicationReducer.swift */,
-				CBC1F294862C5AFB4F994831 /* ApplicationState.swift */,
-				1C4471467947D85C1076870F /* ApplicationStore.swift */,
-				239010BE486EA21FED72AA30 /* Environment.swift */,
+				CBC1F294862C5AFB4F994831 /* Application+State.swift */,
+				DE694FF9335A09C34E984DE9 /* Application+Action.swift */,
+				EBEA2417CAC665BB82B8A480 /* Application+Reducer.swift */,
+				239010BE486EA21FED72AA30 /* Application+Environment.swift */,
 			);
-			path = "Application+Store";
+			path = Application;
 			sourceTree = "<group>";
 		};
 		CCF464C091B8168E043DB14F /* Sections */ = {
@@ -406,8 +430,60 @@
 		E5538A2D60FACD78167250DD /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F8C9D052265C2CBF00D29BAA /* Stargazer+View.swift */,
+				F8952BB8265EAEDB0048FCA9 /* Search */,
+				F8C9D0BC265CCBD400D29BAA /* Stargazer */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		F8585D3D265CEBF600B1FF46 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9D107265CD2BD00D29BAA /* StargazerCell.swift */,
+				F8C9D108265CD2BD00D29BAA /* StargazerCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F8952BB8265EAEDB0048FCA9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F8952BB9265EAEED0048FCA9 /* Search+Feature.swift */,
+				F8952BC8265EB14A0048FCA9 /* SearchViewController.swift */,
+				F8952BC9265EB14A0048FCA9 /* SearchViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F8C9D0AD265C35EC00D29BAA /* environments */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9D08A265C34B000D29BAA /* Environment+live.swift */,
+				F8AC5E7C265D6C160052A205 /* Environment+mock.swift */,
+			);
+			path = environments;
+			sourceTree = "<group>";
+		};
+		F8C9D0BC265CCBD400D29BAA /* Stargazer */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9D04D265C2C5500D29BAA /* Stargazer+Feature.swift */,
+				F8C9D0FE265CD1FA00D29BAA /* StargazersListViewController.swift */,
+				F8C9D0FF265CD1FA00D29BAA /* StargazersListViewController.xib */,
+				F8585D3D265CEBF600B1FF46 /* Cells */,
+			);
+			path = Stargazer;
+			sourceTree = "<group>";
+		};
+		F8C9D0C0265CCC1D00D29BAA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BF798E0C0D51D3B84B82AE45 /* BaseViewController.swift */,
+				D4432E8D28EE9A7A1EAF4BED /* Mock+.swift */,
+				80665B7E76F57884A40C54F5 /* Utils+Rx.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,8 +581,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5AC2E32B9B33FB3E6A6572 /* Assets.xcassets in Resources */,
+				F8952BCC265EB14A0048FCA9 /* SearchViewController.xib in Resources */,
 				7E7EEA548771E71AE9D5826C /* Localizable.strings in Resources */,
 				509AFBA8BFCB03A1C4F9D6E7 /* arrivals.json in Resources */,
+				F8C9D10B265CD2BD00D29BAA /* StargazerCell.xib in Resources */,
 				4AD735DF1C1ABB69FD894BD0 /* arrivals_broken.json in Resources */,
 				7B249B8A77D7E31EE28E15B0 /* departures.json in Resources */,
 				5B36394C7F328322CCF1B0CA /* departures_broken.json in Resources */,
@@ -519,6 +597,7 @@
 				8E3268020C5B8468ED65E450 /* trend.json in Resources */,
 				A384600C1F7650DB931150FC /* trend_broken.json in Resources */,
 				AF772A4C9D9FF310FA4BD9D5 /* trend_milano_centrale.json in Resources */,
+				F8C9D102265CD1FA00D29BAA /* StargazersListViewController.xib in Resources */,
 				2B6D73CAFB58DBA13604953E /* trend_torino_p_nuova_reggio_calabria.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,8 +607,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F132280AC0FD8976560FC78 /* Assets.xcassets in Resources */,
+				F8952BCD265EB14A0048FCA9 /* SearchViewController.xib in Resources */,
 				92FF4E3F103B0C6FF37A5399 /* Localizable.strings in Resources */,
 				B53B2EB2C1CFEC178BC8D461 /* arrivals.json in Resources */,
+				F8C9D10C265CD2BD00D29BAA /* StargazerCell.xib in Resources */,
 				C08C7E71181A50948F4B8308 /* arrivals_broken.json in Resources */,
 				D6EF64EB87D9FE4E91C05DA2 /* departures.json in Resources */,
 				5CC9FBFD4C4E3EAA271FBCC8 /* departures_broken.json in Resources */,
@@ -542,6 +623,7 @@
 				67467C21F5AD9738E8B33C74 /* trend.json in Resources */,
 				FF8576B7E1512CF574D4B4B1 /* trend_broken.json in Resources */,
 				E9B0AD71011DF2DA14C31222 /* trend_milano_centrale.json in Resources */,
+				F8C9D103265CD1FA00D29BAA /* StargazersListViewController.xib in Resources */,
 				42962886BC97A583A16E99AE /* trend_torino_p_nuova_reggio_calabria.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,7 +756,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F12522E916496A95000EE50 /* Difference+.swift in Sources */,
-				F8C9D00A265BF28600D29BAA /* StargazersTests.swift in Sources */,
+				F8C9D00A265BF28600D29BAA /* StargazersViewTests.swift in Sources */,
+				F8C9D0B5265C3A9300D29BAA /* ApplicationTests.swift in Sources */,
 				502029844005DA5D975DA4FB /* Mock+resources.swift in Sources */,
 				205D933185664664D3810BB3 /* MockUrlProtocol.swift in Sources */,
 				E1508DF5C38D3D1C09A23A76 /* NetworkingTests.swift in Sources */,
@@ -685,23 +768,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C9D101265CD1FA00D29BAA /* StargazersListViewController.swift in Sources */,
 				1AA101A2218A8D5D318F582B /* APIRequest.swift in Sources */,
+				F8952B31265D6F040048FCA9 /* Stargazer+View.swift in Sources */,
 				D9C2F1B709C6E40404F6A22A /* AppDelegate.swift in Sources */,
 				394D54A30B8B776CEE5904D3 /* Application+ActivityFeed.swift in Sources */,
-				B81FBEF01DFC1C30E6614B4E /* ApplicationAction.swift in Sources */,
-				C65341D822A2BFA937306DA4 /* ApplicationReducer.swift in Sources */,
-				775877964759A2A7C56DAA79 /* ApplicationState.swift in Sources */,
-				F542603228C51574C40E9254 /* ApplicationStore.swift in Sources */,
-				1DCAEFF1D28E6744A58F2237 /* ArrivalsRequest.swift in Sources */,
+				B81FBEF01DFC1C30E6614B4E /* Application+Action.swift in Sources */,
+				C65341D822A2BFA937306DA4 /* Application+Reducer.swift in Sources */,
+				775877964759A2A7C56DAA79 /* Application+State.swift in Sources */,
+				F542603228C51574C40E9254 /* Application+Store.swift in Sources */,
+				F8952B39265D6F980048FCA9 /* StargazerRequest.swift in Sources */,
+				F8952BBB265EAEED0048FCA9 /* Search+Feature.swift in Sources */,
 				5AA7AA0247055198203A9B8E /* BaseViewController.swift in Sources */,
-				C31E7B188BFA1AE34513F097 /* CollectionViewDelegate.swift in Sources */,
-				F9939C68E1B29FFD86BFCC74 /* Environment.swift in Sources */,
+				F8AC5E7E265D6C160052A205 /* Environment+mock.swift in Sources */,
+				F9939C68E1B29FFD86BFCC74 /* Application+Environment.swift in Sources */,
+				F8952BCB265EB14A0048FCA9 /* SearchViewController.swift in Sources */,
 				F969434938574005E1482DDD /* Localizable.swift in Sources */,
 				D1693720CBC6644BEABFE0D4 /* Mock+.swift in Sources */,
+				F8952B3D265D6FB60048FCA9 /* Environment+live.swift in Sources */,
 				B9615B15FC5CE7D74E04F954 /* Networking.swift in Sources */,
 				BE7CB5D44F178BCB88621C41 /* Rate.swift in Sources */,
+				F8952B35265D6F0C0048FCA9 /* Stargazer+Feature.swift in Sources */,
+				F8C9D10A265CD2BD00D29BAA /* StargazerCell.swift in Sources */,
 				97310B7254CFB66DE302FA76 /* URLRequests+HTTPStatusCodes.swift in Sources */,
-				C5151F1D65A1D1FBC1AC31D9 /* Utils+.swift in Sources */,
 				C280D36298600238E56D4183 /* Utils+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,22 +801,25 @@
 			files = (
 				7A11F89C94F093163C985A7D /* APIRequest.swift in Sources */,
 				CA16EDD05E29FF4EBE68581F /* AppDelegate.swift in Sources */,
+				F8C9D053265C2CBF00D29BAA /* Stargazer+View.swift in Sources */,
 				F2399A77CE071B3362843096 /* Application+ActivityFeed.swift in Sources */,
-				274162A31B9AE4171163C54A /* ApplicationAction.swift in Sources */,
+				274162A31B9AE4171163C54A /* Application+Action.swift in Sources */,
 				F8C9D002265BD81000D29BAA /* StargazerRequest.swift in Sources */,
-				4B76A345808841CC085D391A /* ApplicationReducer.swift in Sources */,
-				D761DD3B6B31D6B9C960ED3C /* ApplicationState.swift in Sources */,
-				86E1B285D503D8E91825B3A4 /* ApplicationStore.swift in Sources */,
-				9970CE15FD1DBC33A4A094DC /* ArrivalsRequest.swift in Sources */,
+				4B76A345808841CC085D391A /* Application+Reducer.swift in Sources */,
+				D761DD3B6B31D6B9C960ED3C /* Application+State.swift in Sources */,
+				86E1B285D503D8E91825B3A4 /* Application+Store.swift in Sources */,
+				F8952BBA265EAEED0048FCA9 /* Search+Feature.swift in Sources */,
 				C5903DC025D1BF9BFAA5FCC4 /* BaseViewController.swift in Sources */,
-				C2231158C504F2A7A289F1AC /* CollectionViewDelegate.swift in Sources */,
-				632CAD3E816D64AC3697B6A5 /* Environment.swift in Sources */,
+				632CAD3E816D64AC3697B6A5 /* Application+Environment.swift in Sources */,
 				FB333780396419D8C1FBA687 /* Localizable.swift in Sources */,
-				912B9478080E66C3E0FF5902 /* Mock+.swift in Sources */,
+				F8952BCA265EB14A0048FCA9 /* SearchViewController.swift in Sources */,
 				2792EF997EB348E17A014CFB /* Networking.swift in Sources */,
 				AA506D5F6CB87E1FA757702C /* Rate.swift in Sources */,
+				F8C9D04E265C2C5500D29BAA /* Stargazer+Feature.swift in Sources */,
+				F8C9D109265CD2BD00D29BAA /* StargazerCell.swift in Sources */,
+				F8C9D100265CD1FA00D29BAA /* StargazersListViewController.swift in Sources */,
 				54505B5D722BAE91FC92A9BE /* URLRequests+HTTPStatusCodes.swift in Sources */,
-				17A1E9BD45CD7D8D6326559D /* Utils+.swift in Sources */,
+				F8C9D08B265C34B000D29BAA /* Environment+live.swift in Sources */,
 				F2C1482A58F2B8D2C5F5F79D /* Utils+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

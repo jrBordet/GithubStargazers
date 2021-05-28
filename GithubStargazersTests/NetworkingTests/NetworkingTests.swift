@@ -9,7 +9,7 @@ import XCTest
 import RxBlocking
 @testable import GithubStargazers
 
-class ArrivalsTests: XCTestCase {
+class NetworkingTests: XCTestCase {
 	var urlSession: URLSession!
 	
 	override func setUpWithError() throws {

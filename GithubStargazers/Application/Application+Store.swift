@@ -9,17 +9,31 @@ import Foundation
 import RxComposableArchitecture
 import SwiftPrettyPrint
 
-//var applicationStore: Store<AppState, AppAction> =
-//  Store(
-//    initialValue: initialAppState,
-//    reducer: with(
-//      appReducer,
-//      compose(
-//		customLogging,
-//        activityFeed
-//    )),
-//    environment: live
-//)
+#if MOCK
+var applicationStore: Store<AppState, AppAction> =
+  Store(
+	initialValue: initialAppState,
+	reducer: with(
+	  appReducer,
+	  compose(
+		customLogging,
+		activityFeed
+	)),
+	environment: AppEnvironment.mock
+)
+#else
+var applicationStore: Store<AppState, AppAction> =
+  Store(
+	initialValue: initialAppState,
+	reducer: with(
+	  appReducer,
+	  compose(
+		customLogging,
+		activityFeed
+	)),
+	environment: AppEnvironment.live
+)
+#endif
 
 
 public func customLogging<Value, Action, Environment>(
@@ -29,11 +43,14 @@ public func customLogging<Value, Action, Environment>(
 		let effects = reducer(&value, action, environment)
 		let _value = value
 		return [.fireAndForget {
-			
-			Pretty.prettyPrint(Date())
-			Pretty.prettyPrint(_value)
+			print("\n---")
 
-			print("\n---\n")
+			Pretty.prettyPrint(Date())
+			
+			print("\n")
+
+			Pretty.prettyPrint(_value)
+			
 			}] + effects
 	}
 }

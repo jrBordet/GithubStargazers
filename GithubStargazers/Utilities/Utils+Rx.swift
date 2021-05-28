@@ -7,6 +7,9 @@
 
 import Foundation
 import RxSwift
+import RxComposableArchitecture
+
+extension Store: ReactiveCompatible {}
 
 extension Observable where Element: OptionalType {
 	func ignoreNil() -> Observable<Element.Wrapped> {

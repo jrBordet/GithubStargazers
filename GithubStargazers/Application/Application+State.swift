@@ -8,15 +8,24 @@
 
 import Foundation
 import RxComposableArchitecture
-import os.log
 
 public struct AppState {
-	var selectedStation: String?
-	// GithubStargazers
+	var starGazers: StargazerViewState
 }
 
+extension AppState: Equatable { }
+
+extension AppState {
+	var starGazersFeature: StargazerViewState {
+		get {
+			self.starGazers
+		}
+		set {
+			self.starGazers = newValue
+		}
+	}
+}
 
 let initialAppState = AppState(
-	selectedStation: nil
+	starGazers: .empty
 )
-
