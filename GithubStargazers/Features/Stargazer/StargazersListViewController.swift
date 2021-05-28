@@ -12,45 +12,6 @@ import RxCocoa
 import RxComposableArchitecture
 import SceneBuilder
 
-extension Store: ReactiveCompatible {}
-
-// MARK: - RxDataSource models
-
-struct StargazerSectionItem {
-	var name: String
-	var imageUrl: URL?
-}
-
-extension StargazerSectionItem: IdentifiableType {
-	public typealias Identity = String
-	
-	public var identity: String {
-		return "\(name)"
-	}
-}
-
-extension StargazerSectionItem: Equatable { }
-
-extension Reactive where Base: Store<StargazerViewState, StargazerViewAction> {
-	var fetch: Binder<(Bool)> {
-		Binder(self.base) { store, value in
-			store.send(StargazerViewAction.stargazer(StargazersAction.fetch))
-		}
-	}
-	
-	var owner: Binder<(String)> {
-		Binder(self.base) { store, value in
-			store.send(StargazerViewAction.stargazer(StargazersAction.owner(value)))
-		}
-	}
-	
-	var repo: Binder<(String)> {
-		Binder(self.base) { store, value in
-			store.send(StargazerViewAction.stargazer(StargazersAction.repo(value)))
-		}
-	}
-}
-
 class StargazersListViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet var ownerField: UITextField!
@@ -115,7 +76,7 @@ class StargazersListViewController: UIViewController {
 		let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
 
 		navigationItem.rightBarButtonItems = [search]
-
+		
 		// MARK: - Config cell
 		
 		tableView.rowHeight = 64
@@ -166,7 +127,7 @@ class StargazersListViewController: UIViewController {
 				guard v else {
 					return .empty()
 				}
-				
+
 				return store.value.map { $0.currentPage }
 			}
 			.distinctUntilChanged()
@@ -251,6 +212,45 @@ extension StargazersListViewController {
 			}
 			
 			return cell
+		}
+	}
+}
+
+// MARK: - RxDataSource models
+
+struct StargazerSectionItem {
+	var name: String
+	var imageUrl: URL?
+}
+
+extension StargazerSectionItem: IdentifiableType {
+	public typealias Identity = String
+	
+	public var identity: String {
+		return "\(name)"
+	}
+}
+
+extension StargazerSectionItem: Equatable { }
+
+// MARK: - Binder
+
+extension Reactive where Base: Store<StargazerViewState, StargazerViewAction> {
+	var fetch: Binder<(Bool)> {
+		Binder(self.base) { store, value in
+			store.send(StargazerViewAction.stargazer(StargazersAction.fetch))
+		}
+	}
+	
+	var owner: Binder<(String)> {
+		Binder(self.base) { store, value in
+			store.send(StargazerViewAction.stargazer(StargazersAction.owner(value)))
+		}
+	}
+	
+	var repo: Binder<(String)> {
+		Binder(self.base) { store, value in
+			store.send(StargazerViewAction.stargazer(StargazersAction.repo(value)))
 		}
 	}
 }

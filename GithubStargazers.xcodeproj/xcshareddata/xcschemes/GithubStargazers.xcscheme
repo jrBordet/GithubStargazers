@@ -42,8 +42,8 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "BASE_URL"
-            value = "https://www.mise.gov.it/images/exportCSV"
-            isEnabled = "YES">
+            value = ""
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
       <CodeCoverageTargets>

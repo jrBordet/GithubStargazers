@@ -150,7 +150,7 @@ class StargazersViewTests: XCTestCase {
 		)
 	}
 	
-	func testStargazersFetch_empty_owner_empty() {
+	func testStargazersFetch_empty_owner() {
 		let initialValue = StargazerViewState(
 			list: [],
 			repo: "some",

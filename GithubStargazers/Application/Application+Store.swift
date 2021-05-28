@@ -8,7 +8,6 @@
 import Foundation
 import RxComposableArchitecture
 import SwiftPrettyPrint
-import os.log
 
 #if MOCK
 var applicationStore: Store<AppState, AppAction> =
@@ -44,11 +43,14 @@ public func customLogging<Value, Action, Environment>(
 		let effects = reducer(&value, action, environment)
 		let _value = value
 		return [.fireAndForget {
-			
-			Pretty.prettyPrint(Date())
-			Pretty.prettyPrint(_value)
+			print("\n---")
 
-			print("\n---\n")
+			Pretty.prettyPrint(Date())
+			
+			print("\n")
+
+			Pretty.prettyPrint(_value)
+			
 			}] + effects
 	}
 }

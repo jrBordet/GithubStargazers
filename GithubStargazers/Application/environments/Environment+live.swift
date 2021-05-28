@@ -15,10 +15,6 @@ extension AppEnvironment {
 	static var live = Self(
 		stargazersEnv: StargazerViewEnvironment.live
 	)
-	
-	static var sample = Self(
-		stargazersEnv: StargazerViewEnvironment.sample
-	)
 }
 
 // MARK: - View (features composition)
@@ -26,10 +22,6 @@ extension AppEnvironment {
 extension StargazerViewEnvironment {
 	static var live = Self(
 		stargazersEnv: StargazersEnvironment.live
-	)
-	
-	static var sample = Self(
-		stargazersEnv: StargazersEnvironment.sample
 	)
 }
 
@@ -69,61 +61,11 @@ extension StargazersEnvironment {
 							])
 						}
 						
-						return .just([])s
+						return .just([])
 					default:
 						return .just([])
 					}
 				}
 		}
 	)
-	
-	static var sample = Self(
-		fetch: { _, _, _ in
-			.just([
-				StargazersModel.sample,
-				.sample_1
-			])
-		}
-	)
 }
-
-//			request
-//				.execute()
-//				.catchError { (e: Error) -> Observable<[StargazerRequestModel]> in
-//					guard let error = e as? APIError else {
-//						return .just([])
-//					}
-//
-//					switch error {
-//					case let .code(value):
-//						return .just([])
-//					default:
-//						return .just([])
-//					}
-//				}
-//				.subscribe()
-//				.retryWhen { e -> Observable<[StargazerRequestModel]> in
-//					e.enumerated().flatMap { (index: Int, element: Error) -> Observable<[StargazerRequestModel]> in
-//						if let error = element as? APIError {
-//							dump(error)
-//							switch error {
-//							case let .code(value):
-//								return .just([])
-//							default:
-//								return .just([])
-//							}
-//						}
-//
-//						return .just([])
-//					}
-//				}.subscribe()
-
-/**
-
-let request = StargazerRequest(
-owner: "octocat",
-repo: "hello-world",
-page: page
-)
-
-*/
