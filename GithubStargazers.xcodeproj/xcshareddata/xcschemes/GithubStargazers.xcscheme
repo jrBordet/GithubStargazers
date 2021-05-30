@@ -96,13 +96,6 @@
             ReferencedContainer = "container:GithubStargazers.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "BASE_URL"
-            value = "https://www.mise.gov.it/images/exportCSV"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
