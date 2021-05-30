@@ -72,7 +72,7 @@ class StargazersListViewController: UIViewController {
 			return
 		}
 		
-		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(searchTapped))
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "search", style: .plain, target: self, action: #selector(searchTapped))
 		let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
 
 		navigationItem.rightBarButtonItems = [search]
@@ -154,10 +154,6 @@ class StargazersListViewController: UIViewController {
 		// MARK: - Bind dataSource
 		
 		setupDataSource()
-		
-		store.value
-			.subscribe()
-			.disposed(by: disposeBag)
 		
 		store
 			.value
