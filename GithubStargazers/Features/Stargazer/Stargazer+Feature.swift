@@ -72,6 +72,7 @@ public func stargazerReducer(
 // MARK: - Model
 
 public struct StargazersModel {
+	let id: Int
 	let name: String
 	let imageUrl: URL?
 }
@@ -80,21 +81,25 @@ extension StargazersModel: Equatable { }
 
 extension StargazersModel {
 	static var notFound = Self(
+		id: 1,
 		name: "not-found",
 		imageUrl: nil
 	)
 	
 	static var empty = Self(
+		id: 0,
 		name: "",
 		imageUrl: nil
 	)
 	
 	static var sample = Self(
+		id: 1,
 		name: "ryagas",
 		imageUrl: URL(string: "https://avatars.githubusercontent.com/u/553981?v=4")!
 	)
 	
 	static var sample_1 = Self(
+		id: 2,
 		name: "kjaikeerthi",
 		imageUrl: URL(string: "https://avatars.githubusercontent.com/u/351510?v=4")!
 	)

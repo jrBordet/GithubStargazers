@@ -164,11 +164,13 @@ class StargazersListViewController: UIViewController {
 			.map { (state: StargazerViewState) -> [StargazerSectionItem] in
 				state.list.map { (model: StargazersModel) -> StargazerSectionItem in
 					StargazerSectionItem(
+						id: model.id,
 						name: model.name,
 						imageUrl: model.imageUrl
 					)
 				}
 			}
+			.distinctUntilChanged()
 			.map { (items: [StargazerSectionItem]) -> [ArrivalsDeparturesListSectionModel] in
 				[
 					ArrivalsDeparturesListSectionModel(
@@ -219,6 +221,7 @@ extension StargazersListViewController {
 // MARK: - RxDataSource models
 
 struct StargazerSectionItem {
+	var id: Int
 	var name: String
 	var imageUrl: URL?
 }
@@ -227,30 +230,8 @@ extension StargazerSectionItem: IdentifiableType {
 	public typealias Identity = String
 	
 	public var identity: String {
-		return "\(name)"
+		return "\(id)\(name)"
 	}
 }
 
 extension StargazerSectionItem: Equatable { }
-
-// MARK: - Binder
-
-extension Reactive where Base: Store<StargazerViewState, StargazerViewAction> {
-	var fetch: Binder<(Bool)> {
-		Binder(self.base) { store, value in
-			store.send(StargazerViewAction.stargazer(StargazersAction.fetch))
-		}
-	}
-	
-	var owner: Binder<(String)> {
-		Binder(self.base) { store, value in
-			store.send(StargazerViewAction.stargazer(StargazersAction.owner(value)))
-		}
-	}
-	
-	var repo: Binder<(String)> {
-		Binder(self.base) { store, value in
-			store.send(StargazerViewAction.stargazer(StargazersAction.repo(value)))
-		}
-	}
-}

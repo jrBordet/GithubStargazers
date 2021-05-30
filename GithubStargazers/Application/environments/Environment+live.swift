@@ -41,6 +41,7 @@ extension StargazersEnvironment {
 				.map { (model: [StargazerRequestModel]) -> [StargazersModel] in
 					model.map { (m: StargazerRequestModel) -> StargazersModel in
 						let model = StargazersModel(
+							id: m.id,
 							name: m.login,
 							imageUrl: URL(string: m.avatar_url)
 						)

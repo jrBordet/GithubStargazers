@@ -107,19 +107,3 @@ class SearchViewController: UIViewController {
 			.disposed(by: disposeBag)
 	}
 }
-
-// MARK: - Binder
-
-extension Reactive where Base: Store<SearchState, SearchAction> {
-	var owner: Binder<(String)> {
-		Binder(self.base) { store, value in
-			store.send(SearchAction.owner(value))
-		}
-	}
-	
-	var repo: Binder<(String)> {
-		Binder(self.base) { store, value in
-			store.send(SearchAction.repo(value))
-		}
-	}
-}
