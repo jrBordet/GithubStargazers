@@ -14,4 +14,8 @@ reset:
 gen:
 	swiftgen
 
+test:
+	rm -rf TestResults
+	rm -rf TestResults.xcresult
+	xcodebuild test -workspace GithubStargazers.xcworkspace -scheme GithubStargazersTests -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -resultBundlePath TestResults
 
