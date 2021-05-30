@@ -32,8 +32,10 @@ extension StargazersEnvironment {
 			
 			func map(_ model: StargazerRequestModel) -> StargazersModel {
 				StargazersModel(
+					id: model.id,
 					name: model.login,
-					imageUrl: URL(string: model.avatar_url)
+					imageUrl: URL(string: model.avatar_url
+					)
 				)
 			}
 			
