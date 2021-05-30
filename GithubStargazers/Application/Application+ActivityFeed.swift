@@ -13,9 +13,6 @@ func activityFeed(
 	_ reducer: @escaping Reducer<AppState, AppAction, AppEnvironment>
 ) -> Reducer<AppState, AppAction, AppEnvironment> {
 	return { state, action, environment in
-
-		print("[APPLICATION][action]\(action)")
-		print("[APPLICATION][state]\(state)")
 				
 		let mirror = Mirror(reflecting: action)
 				
