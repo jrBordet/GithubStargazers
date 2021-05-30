@@ -104,40 +104,6 @@ class StargazersViewTests: XCTestCase {
 		)
 	}
 	
-	func testStargazersFetch_owner_repo() {
-		assert(
-			initialValue: .empty,
-			reducer: stargazerViewReducer,
-			environment: env_filled,
-			steps: Step(.send, StargazerViewAction.stargazer(.owner("octocat")), { state in
-				state.owner = "octocat"
-			}), Step(.send, StargazerViewAction.stargazer(.repo("hello-world")), { state in
-				state.repo = "hello-world"
-			}),
-			Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
-				state.isLoading = true
-			}),
-			Step(.receive, StargazerViewAction.stargazer(StargazersAction.fetchResponse([.sample])), { state in
-				state.isLoading = false
-				state.currentPage = 2
-				state.list = [
-					.sample
-				]
-			}),
-			Step(.send, StargazerViewAction.stargazer(StargazersAction.fetch), { state in
-				state.isLoading = true
-			}),
-			Step(.receive, StargazerViewAction.stargazer(StargazersAction.fetchResponse([.sample_1])), { state in
-				state.isLoading = false
-				state.currentPage = 3
-				state.list = [
-					.sample,
-					.sample_1
-				]
-			})
-		)
-	}
-	
 	func testStargazersFetch_empty_owner_and_repo() {
 		assert(
 			initialValue: .empty,
